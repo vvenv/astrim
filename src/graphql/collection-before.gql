@@ -1,0 +1,34 @@
+query getCollectionBefore(
+  $handle: String!
+  $last: Int = 6
+  $before: String = ""
+) {
+  collection(handle: $handle) {
+    title
+    description
+    products(last: $last, before: $before) {
+      nodes {
+        handle
+        title
+        featuredImage {
+          id
+          url
+        }
+        variants(first: 1) {
+          nodes {
+            price {
+              amount
+              currencyCode
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasPreviousPage
+        hasNextPage
+        startCursor
+        endCursor
+      }
+    }
+  }
+}

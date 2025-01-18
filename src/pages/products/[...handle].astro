@@ -1,0 +1,59 @@
+---
+import type { GetProductQuery } from "api.generated";
+import request from "graphql-request";
+import AddToCart from "@/components/AddToCart";
+import MediaGallery from "@/components/MediaGallery";
+import VariantSwatch from "@/components/VariantSwatch";
+import VariantPrice from "@/components/VariantPrice";
+import getProduct from "@/graphql/product.gql";
+import Layout from "@/layouts/Default.astro";
+import YouMayAlsoLike from "@/partials/YouMayAlsoLike.astro";
+
+export const prerender = false;
+
+const { handle } = Astro.params;
+
+const { product } = await request<GetProductQuery>(
+  "https://mock.shop/api",
+  getProduct,
+  { handle }
+);
+
+if (!product) {
+  return {
+    status: 404,
+  };
+}
+
+const {
+  title,
+  description,
+  featuredImage,
+  selectedOrFirstAvailableVariant,
+  options,
+  variants: { nodes: variants },
+} = product;
+---
+
+<Layout title={title} description={description}>
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-[3fr_2fr]">
+    <MediaGallery
+      client:load
+      featuredImage={featuredImage}
+      variants={variants}
+    />
+    <section>
+      <h1 class="text-4xl font-bold">{title}</h1>
+      <VariantPrice client:only="react" variants={variants} />
+      <VariantSwatch
+        client:load
+        options={options}
+        initialSelectedOptions={selectedOrFirstAvailableVariant?.selectedOptions ??
+          []}
+      />
+      <AddToCart client:load variants={variants} />
+      <p>{description}</p>
+    </section>
+  </div>
+  <YouMayAlsoLike />
+</Layout>

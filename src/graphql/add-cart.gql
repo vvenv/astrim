@@ -1,0 +1,37 @@
+mutation addCart($cartId: ID!, $merchandiseId: ID!, $quantity: Int = 1) {
+  cartLinesAdd(
+    cartId: $cartId
+    lines: [{ quantity: $quantity, merchandiseId: $merchandiseId }]
+  ) {
+    cart {
+      id
+      createdAt
+      updatedAt
+      lines(first: 100) {
+        nodes {
+          id
+          merchandise {
+            ... on ProductVariant {
+              id
+              title
+              image {
+                id
+                url
+              }
+            }
+          }
+        }
+      }
+      cost {
+        totalAmount {
+          amount
+          currencyCode
+        }
+        subtotalAmount {
+          amount
+          currencyCode
+        }
+      }
+    }
+  }
+}

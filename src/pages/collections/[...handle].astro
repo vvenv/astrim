@@ -1,0 +1,95 @@
+---
+import type { GetCollectionQuery } from "api.generated";
+import request from "graphql-request";
+import ProductImage from "@/components/ProductImage";
+import ProductPrice from "@/components/ProductPrice";
+import getCollection from "@/graphql/collection.gql";
+import getCollectionBefore from "@/graphql/collection-before.gql";
+import Layout from "@/layouts/Default.astro";
+
+export const prerender = false;
+
+const [, handle, before, after = null] =
+  Astro.params.handle?.match(/^(.+?)(?:\/(?:-(.+)|(.+)-))?$/) || [];
+
+const { collection } = before
+  ? await request<GetCollectionQuery>(
+      "https://mock.shop/api",
+      getCollectionBefore,
+      { handle, before }
+    )
+  : await request<GetCollectionQuery>("https://mock.shop/api", getCollection, {
+      handle,
+      after,
+    });
+
+const {
+  title,
+  description,
+  products: {
+    nodes: products,
+    pageInfo: { hasPreviousPage, hasNextPage, startCursor, endCursor },
+  },
+} = collection!;
+---
+
+<Layout title={title} description={description}>
+  <h1 class="text-2xl">{title}</h1>
+  <ul class="grid grid-cols-2 gap-6 lg:grid-cols-4 md:grid-cols-3">
+    {
+      products.map(
+        ({
+          handle,
+          title,
+          featuredImage,
+          variants: {
+            nodes: [
+              {
+                price: { amount, currencyCode },
+              },
+            ],
+          },
+        }) => (
+          <li class="relative">
+            <ProductImage src={featuredImage!.url as string} alt={title} />
+            <h3>
+              <a
+                class="after:absolute after:inset-0 after:z-10 hover:underline after:content-empty"
+                href={`/products/${handle}`}
+              >
+                {title}
+              </a>
+            </h3>
+            <ProductPrice amount={amount as string} currency={currencyCode} />
+          </li>
+        )
+      )
+    }
+  </ul>
+  <div class="mt-8 flex items-center justify-between gap-5">
+    {
+      hasPreviousPage ? (
+        <a
+          class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
+          href={`/collections/${handle}/-${startCursor}`}
+        >
+          Previous
+        </a>
+      ) : (
+        <i />
+      )
+    }
+    {
+      hasNextPage ? (
+        <a
+          class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
+          href={`/collections/${handle}/${endCursor}-`}
+        >
+          Next
+        </a>
+      ) : (
+        <i />
+      )
+    }
+  </div>
+</Layout>

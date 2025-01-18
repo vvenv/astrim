@@ -1,0 +1,30 @@
+query getCollection($handle: String!, $first: Int = 6, $after: String = "") {
+  collection(handle: $handle) {
+    title
+    description
+    products(first: $first, after: $after) {
+      nodes {
+        handle
+        title
+        featuredImage {
+          id
+          url
+        }
+        variants(first: 1) {
+          nodes {
+            price {
+              amount
+              currencyCode
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasPreviousPage
+        hasNextPage
+        startCursor
+        endCursor
+      }
+    }
+  }
+}

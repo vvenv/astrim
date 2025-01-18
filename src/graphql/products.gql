@@ -1,0 +1,20 @@
+query getProducts($first: Int = 4) {
+  products(first: $first) {
+    nodes {
+      id
+      title
+      featuredImage {
+        id
+        url
+      }
+      variants(first: 1) {
+        nodes {
+          price {
+            amount
+            currencyCode
+          }
+        }
+      }
+    }
+  }
+}

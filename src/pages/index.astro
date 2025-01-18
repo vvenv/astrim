@@ -1,0 +1,21 @@
+---
+import type { GetCollectionsQuery } from "api.generated";
+import { request } from "graphql-request";
+import Collection from "@/components/Collection";
+import getCollections from "@/graphql/collections.gql";
+import Layout from "@/layouts/Default.astro";
+
+const {
+  collections: { nodes: collections },
+} = await request<GetCollectionsQuery>("https://mock.shop/api", getCollections);
+---
+
+<Layout>
+  <div class="flex flex-col gap-8">
+    {
+      collections.map(({ handle, title, products: { nodes: products } }) => (
+        <Collection handle={handle} title={title} products={products} />
+      ))
+    }
+  </div>
+</Layout>

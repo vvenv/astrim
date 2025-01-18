@@ -1,0 +1,26 @@
+query getCollections($first: Int = 6) {
+  collections(first: $first) {
+    nodes {
+      handle
+      title
+      products(first: 4) {
+        nodes {
+          handle
+          title
+          featuredImage {
+            id
+            url
+          }
+          variants(first: 1) {
+            nodes {
+              price {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
