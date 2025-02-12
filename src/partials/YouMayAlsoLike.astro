@@ -5,12 +5,13 @@ import ProductImage from "@/components/ProductImage";
 import ProductPrice from "@/components/ProductPrice";
 import getProducts from "@/graphql/products.gql";
 
-type Props = {
+interface Props {
   showButton?: true;
   first?: number;
+  t?: (key: string) => string;
 };
 
-const { showButton, first } = Astro.props;
+const { showButton, first, t } = Astro.props;
 
 const {
   products: { nodes: products },
@@ -51,7 +52,7 @@ const {
           class="bg-primary px-8 py-3 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
           href="/collections/all"
         >
-          View all
+          {t('View all')}
         </a>
       </div>
     )

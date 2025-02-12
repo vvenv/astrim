@@ -31,4 +31,10 @@ export default defineConfig({
   vite: {
     plugins: [graphql()],
   },
+
+  i18n: {
+    locales: ["en", "zh"],
+    defaultLocale: "en",
+    routing: "manual",
+  },
 });

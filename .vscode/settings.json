@@ -11,5 +11,6 @@
     "unocss",
     "vvenv"
   ],
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "commentTranslate.targetLanguage": "zh-CN"
 }
