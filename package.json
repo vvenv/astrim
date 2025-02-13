@@ -56,7 +56,7 @@
     "@rollup/plugin-graphql": "^2.0.5",
     "@shopify/graphql-codegen": "^0.1.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
-    "@types/node": "^22.13.1",
+    "@types/node": "^22.13.2",
     "@unocss/eslint-config": "^65.4.3",
     "@unocss/reset": "^65.4.3",
     "eslint": "^9.20.1",
