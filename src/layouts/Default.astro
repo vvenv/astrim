@@ -4,13 +4,18 @@ import Banner from "@/components/Banner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BaseHead from "@/partials/BaseHead.astro";
+import { l } from "@/store/l";
+
+const {lang = 'en'} = Astro.params;
+
+l.set(lang);
 
 type Props = CollectionEntry<"page">["data"];
 
 const { title, description } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <BaseHead title={title} description={description} />
   </head>

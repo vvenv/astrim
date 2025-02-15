@@ -1,3 +1,4 @@
+import { l } from "@/store/l";
 import clsx from "clsx";
 import { useEffect } from "react";
 
@@ -133,7 +134,7 @@ export default function Localization({ country, currency }: Props) {
                 <li key={country} tabIndex={-1}>
                   <a
                     className="flex items-center justify-between gap-1 border border-default/0 py-2 pl-2 pr-8 transition-colors hover:border-default/50"
-                    href={`/${country}/${currency}`}
+                    href={`/${l.get()}/${country}/${currency}`}
                   >
                     <span className="flex items-center gap-2">
                       <i
