@@ -37,4 +37,8 @@ export default defineConfig({
     defaultLocale: "en",
     routing: "manual",
   },
+
+  redirects: {
+    "/": "/en/",
+  },
 });
