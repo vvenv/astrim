@@ -3,8 +3,11 @@ import Localization from "@/components/Localization";
 import PaymentMethods from "@/components/PaymentMethods";
 import SocialMedia from "@/components/SocialMedia";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { createT } from "@/utils/i18n";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await createT();
+
   return (
     <footer className="bg-default px-4 pb-24 pt-8">
       <div className="mt-8 flex flex-col items-center gap-8 border-t border-default/8 pt-8">
@@ -15,7 +18,9 @@ export default function Footer() {
         <Localization />
         <PaymentMethods />
         <section className="flex flex-col items-center gap-2">
-          <p>&copy; {new Date().getFullYear()} vvenv. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} vvenv. {t("All rights reserved.")}
+          </p>
           <p className="mt-4 flex justify-center gap-4">
             <ThemeSwitcher />
             <a

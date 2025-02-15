@@ -1,7 +1,16 @@
 {
+  "Add to cart": "添加到购物车",
+  "All rights reserved.": "保留所有权利。",
   "Continue shopping": "继续购物",
+  "Country/region": "国家/地区",
+  "Email": "电子邮件",
+  "Free shipping available on all orders!": "所有订单可享受免费送货！",
   "Have an account?": "已有账号？",
   "Log in": "登录",
+  "Subscribe to our emails": "订阅我们的邮件",
   "to check out faster.": "以更快速的方式结账。",
-  "View all": "查看全部"
+  "View all": "查看全部",
+  "View collection": "查看系列",
+  "Your cart is empty": "您的购物车是空的",
+  "You may also like": "您可能还喜欢"
 }

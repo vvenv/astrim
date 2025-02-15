@@ -1,11 +1,13 @@
 import { defineMiddleware } from "astro:middleware";
+import { l } from "@/store/l";
 
 export const onRequest = defineMiddleware(async (ctx, next) => {
   const { lang } = ctx.params;
 
-  if (["en", "zh"].includes(lang!)) {
-    return next();
+  if (!lang || !["en", "zh"].includes(lang)) {
+    return ctx.redirect("/en/");
   }
 
-  return ctx.redirect("/en/");
+  l.set(lang!);
+  return next();
 });

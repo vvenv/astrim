@@ -1,4 +1,5 @@
 import { l } from "@/store/l";
+import { createT } from "@/utils/i18n";
 import clsx from "clsx";
 import { useEffect } from "react";
 
@@ -67,7 +68,7 @@ const countries = [
   },
 ];
 
-export default function Localization({ country, currency }: Props) {
+export default async function Localization({ country, currency }: Props) {
   const current =
     countries.find((c) => c.country === country && c.currency === currency) ??
     countries[0];
@@ -97,9 +98,12 @@ export default function Localization({ country, currency }: Props) {
       attributeFilter: ["open"],
     });
   }, []);
+
+  const t = await createT();
+
   return (
     <section className="flex flex-col items-center gap-2">
-      <h2 className="">Country/region</h2>
+      <h2 className="">{t("Country/region")}</h2>
       <details className="group" id="localization">
         <summary
           className="flex cursor-pointer items-center gap-8 border border-default/50 px-5 py-3 text-default"

@@ -1,3 +1,4 @@
+import { l } from "@/store/l";
 import AccountLogin from "./AccountLogin";
 import HeaderLogo from "./HeaderLogo";
 import MenuDrawer from "./MenuDrawer";
@@ -11,7 +12,11 @@ export default function Header() {
       <div className="flex items-center justify-end gap-2">
         <Search />
         <AccountLogin className="hidden md:block" iconOnly />
-        <a className="p-0.5 text-default" href="/cart" aria-label="View cart">
+        <a
+          className="p-0.5 text-default"
+          href={`/${l.get()}/cart`}
+          aria-label="View cart"
+        >
           <i className="i-astrim:cart-empty block size-10 cursor-pointer transition-transform hover:scale-110"></i>
         </a>
       </div>

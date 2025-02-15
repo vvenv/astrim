@@ -1,0 +1,11 @@
+languageIds:
+  - astro
+  - javascript
+  - typescript
+  - javascriptreact
+  - typescriptreact
+
+usageMatchRegex:
+  - "[^\\w\\d]t\\('(.+?)'"
+
+monopoly: true

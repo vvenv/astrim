@@ -2,6 +2,7 @@ import type { GetProductQuery } from "api.generated";
 import { useEffect, useMemo, useState } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedOptions } from "@/store/selectedOptions";
+import { createT } from "@/utils/i18n";
 
 type Props = {
   variants: NonNullable<
@@ -9,7 +10,7 @@ type Props = {
   >["nodes"];
 };
 
-export default function AddToCart({ variants }: Props) {
+export default async function AddToCart({ variants }: Props) {
   const $selectedOptions = useStore(selectedOptions);
 
   const [disabled, setDisabled] = useState(true);
@@ -26,6 +27,8 @@ export default function AddToCart({ variants }: Props) {
     setDisabled(!selectedVariant?.availableForSale);
   }, [selectedVariant?.availableForSale]);
 
+  const t = await createT();
+
   return (
     <section className="my-8 flex flex-col items-start gap-5">
       <input
@@ -39,7 +42,7 @@ export default function AddToCart({ variants }: Props) {
         className="block w-full cursor-pointer bg-primary px-8 py-3 text-primary-contrast disabled:cursor-not-allowed disabled:bg-primary/50 disabled:text-primary-contrast/50 hover:outline-1 hover:outline-primary hover:outline-solid disabled:outline-none"
         disabled={disabled}
       >
-        Add to cart
+        {t("Add to cart")}
       </button>
     </section>
   );

@@ -4,24 +4,27 @@ import { request } from "graphql-request";
 import ProductImage from "@/components/ProductImage";
 import ProductPrice from "@/components/ProductPrice";
 import getProducts from "@/graphql/products.gql";
+import { l } from "@/store/l";
+import { createT } from "@/utils/i18n";
 
 interface Props {
   showButton?: true;
   first?: number;
-  t?: (key: string) => string;
 };
 
-const { showButton, first, t } = Astro.props;
+const { showButton, first } = Astro.props;
 
 const {
   products: { nodes: products },
 } = await request<GetProductsQuery>("https://mock.shop/api", getProducts, {
   first,
 });
+
+const t = await createT();
 ---
 
 <section class="my-8 flex flex-col gap-5">
-  <h2 class="text-2xl">You may also like</h2>
+  <h2 class="text-2xl">{t('You may also like')}</h2>
   <ul class="grid grid-cols-2 gap-6 md:grid-cols-4">
     {
       products.map(
@@ -50,7 +53,7 @@ const {
       <div class="mt-5 flex flex-col items-center">
         <a
           class="bg-primary px-8 py-3 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
-          href="/collections/all"
+          href={`/${l.get()}/collections/all`}
         >
           {t('View all')}
         </a>

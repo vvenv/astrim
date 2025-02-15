@@ -1,11 +1,15 @@
-export default function Banner() {
+import { createT } from "@/utils/i18n";
+
+export default async function Banner() {
+  const t = await createT();
+
   return (
     <div
       className="border-b border-default/8 bg-default p-2 text-center text-sm text-default tracking-widest"
       role="region"
       aria-label="Announcement"
     >
-      Free shipping available on all orders!
+      {t("Free shipping available on all orders!")}
     </div>
   );
 }

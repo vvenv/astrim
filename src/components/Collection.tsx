@@ -2,6 +2,7 @@ import type { GetCollectionQuery } from "api.generated";
 import ProductImage from "./ProductImage";
 import ProductPrice from "./ProductPrice";
 import { l } from "@/store/l";
+import { createT } from "@/utils/i18n";
 
 type Props = {
   handle: string;
@@ -13,7 +14,9 @@ type Props = {
   >;
 };
 
-export default function Collection({ handle, title, products }: Props) {
+export default async function Collection({ handle, title, products }: Props) {
+  const t = await createT();
+
   return (
     <section className="flex flex-col items-start gap-5">
       <h2 className="text-2xl">{title}</h2>
@@ -50,7 +53,7 @@ export default function Collection({ handle, title, products }: Props) {
         className="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
         href={`/${l.get()}/collections/${handle}`}
       >
-        View collection
+        {t("View collection")}
       </a>
     </section>
   );

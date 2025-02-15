@@ -1,7 +1,11 @@
-export default function EmailSubscribe() {
+import { createT } from "@/utils/i18n";
+
+export default async function EmailSubscribe() {
+  const t = await createT();
+
   return (
     <section className="flex flex-col items-center gap-2">
-      <h2 className="text-base md:text-2xl">Subscribe to our emails</h2>
+      <h2 className="text-base md:text-2xl">{t("Subscribe to our emails")}</h2>
       <form className="relative">
         <input
           className="peer w-full border border-default/50 bg-transparent px-5 py-3 focus:pb-1 focus:pt-5 not-placeholder-shown:pb-1 not-placeholder-shown:pt-5 placeholder:opacity-0"
@@ -21,7 +25,7 @@ export default function EmailSubscribe() {
           htmlFor="subscribe-email"
           aria-controls="subscribe-email"
         >
-          Email
+          {t("Email")}
         </label>
         <button
           className="absolute right-5 top-3.5"
