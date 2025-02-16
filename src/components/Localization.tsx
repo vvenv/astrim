@@ -1,5 +1,4 @@
-import { l } from "@/store/l";
-import { createT } from "@/utils/i18n";
+import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import { useEffect } from "react";
 
@@ -68,7 +67,12 @@ const countries = [
   },
 ];
 
-export default async function Localization({ country, currency }: Props) {
+export default function Localization({ country, currency }: Props) {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
+
   const current =
     countries.find((c) => c.country === country && c.currency === currency) ??
     countries[0];
@@ -98,8 +102,6 @@ export default async function Localization({ country, currency }: Props) {
       attributeFilter: ["open"],
     });
   }, []);
-
-  const t = await createT();
 
   return (
     <section className="flex flex-col items-center gap-2">
@@ -138,7 +140,7 @@ export default async function Localization({ country, currency }: Props) {
                 <li key={country} tabIndex={-1}>
                   <a
                     className="flex items-center justify-between gap-1 border border-default/0 py-2 pl-2 pr-8 transition-colors hover:border-default/50"
-                    href={`/${l.get()}/${country}/${currency}`}
+                    href={`/${language}/${country}/${currency}`}
                   >
                     <span className="flex items-center gap-2">
                       <i

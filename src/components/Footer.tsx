@@ -3,10 +3,13 @@ import Localization from "@/components/Localization";
 import PaymentMethods from "@/components/PaymentMethods";
 import SocialMedia from "@/components/SocialMedia";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import { createT } from "@/utils/i18n";
+import { useTranslation } from "react-i18next";
 
-export default async function Footer() {
-  const t = await createT();
+export default function Footer() {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
 
   return (
     <footer className="bg-default px-4 pb-24 pt-8">
@@ -23,6 +26,13 @@ export default async function Footer() {
           </p>
           <p className="mt-4 flex justify-center gap-4">
             <ThemeSwitcher />
+            <a
+              className="block p-0.5 text-default/50 no-underline hover:text-default/75"
+              href={language === "en" ? "/zh" : "/"}
+              title="Toggle language"
+            >
+              <i className="i-astrim-language block size-5"></i>
+            </a>
             <a
               className="block p-0.5 text-default/50 no-underline hover:text-default/75"
               href="https://github.com/vvenv/astrim"

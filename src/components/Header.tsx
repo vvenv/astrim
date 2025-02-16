@@ -1,10 +1,14 @@
-import { l } from "@/store/l";
 import AccountLogin from "./AccountLogin";
 import HeaderLogo from "./HeaderLogo";
 import MenuDrawer from "./MenuDrawer";
 import Search from "./Search";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const {
+    i18n: { language },
+  } = useTranslation();
+
   return (
     <header className="sticky top-0 z-20 grid grid-cols-[160px_1fr_160px] items-center border-b border-default/8 bg-default px-6 py-2">
       <MenuDrawer />
@@ -14,7 +18,7 @@ export default function Header() {
         <AccountLogin className="hidden md:block" iconOnly />
         <a
           className="p-0.5 text-default"
-          href={`/${l.get()}/cart`}
+          href={`/${language!}/cart`}
           aria-label="View cart"
         >
           <i className="i-astrim:cart-empty block size-10 cursor-pointer transition-transform hover:scale-110"></i>

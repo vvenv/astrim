@@ -6,10 +6,8 @@ import ProductPrice from "@/components/ProductPrice";
 import getCollection from "@/graphql/collection.gql";
 import getCollectionBefore from "@/graphql/collection-before.gql";
 import Layout from "@/layouts/Default.astro";
-import { l } from "@/store/l";
-import { createT } from "@/utils/i18n";
+import i18n from "i18next";
 
-const t = await createT();
 
 export const prerender = false;
 
@@ -59,7 +57,7 @@ const {
             <h3>
               <a
                 class="after:absolute after:inset-0 after:z-10 hover:underline after:content-empty"
-                href={`/${l.get()}/products/${handle}`}
+                href={`/${i18n.language}/products/${handle}`}
               >
                 {title}
               </a>
@@ -75,9 +73,9 @@ const {
       hasPreviousPage ? (
         <a
           class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
-          href={`/${l.get()}/collections/${handle}/-${startCursor}`}
+          href={`/${i18n.language}/collections/${handle}/-${startCursor}`}
         >
-          {t('Previous')}
+          {i18n.t('Previous')}
         </a>
       ) : (
         <i />
@@ -87,9 +85,9 @@ const {
       hasNextPage ? (
         <a
           class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
-          href={`/${l.get()}/collections/${handle}/${endCursor}-`}
+          href={`/${i18n.language}/collections/${handle}/${endCursor}-`}
         >
-          {t('Next')}
+          {i18n.t('Next')}
         </a>
       ) : (
         <i />

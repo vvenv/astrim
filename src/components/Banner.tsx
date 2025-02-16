@@ -1,7 +1,7 @@
-import { createT } from "@/utils/i18n";
+import { useTranslation } from "react-i18next";
 
-export default async function Banner() {
-  const t = await createT();
+export default function Banner() {
+  const { t } = useTranslation();
 
   return (
     <div

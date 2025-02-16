@@ -2,7 +2,7 @@ import type { GetProductQuery } from "api.generated";
 import { useEffect, useMemo, useState } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedOptions } from "@/store/selectedOptions";
-import { createT } from "@/utils/i18n";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   variants: NonNullable<
@@ -10,7 +10,9 @@ type Props = {
   >["nodes"];
 };
 
-export default async function AddToCart({ variants }: Props) {
+export default function AddToCart({ variants }: Props) {
+  const { t } = useTranslation();
+
   const $selectedOptions = useStore(selectedOptions);
 
   const [disabled, setDisabled] = useState(true);
@@ -26,8 +28,6 @@ export default async function AddToCart({ variants }: Props) {
   useEffect(() => {
     setDisabled(!selectedVariant?.availableForSale);
   }, [selectedVariant?.availableForSale]);
-
-  const t = await createT();
 
   return (
     <section className="my-8 flex flex-col items-start gap-5">

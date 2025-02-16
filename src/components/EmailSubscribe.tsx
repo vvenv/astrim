@@ -1,7 +1,7 @@
-import { createT } from "@/utils/i18n";
+import { useTranslation } from "react-i18next";
 
-export default async function EmailSubscribe() {
-  const t = await createT();
+export default function EmailSubscribe() {
+  const { t } = useTranslation();
 
   return (
     <section className="flex flex-col items-center gap-2">

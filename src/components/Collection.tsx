@@ -1,8 +1,7 @@
 import type { GetCollectionQuery } from "api.generated";
 import ProductImage from "./ProductImage";
 import ProductPrice from "./ProductPrice";
-import { l } from "@/store/l";
-import { createT } from "@/utils/i18n";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   handle: string;
@@ -14,8 +13,11 @@ type Props = {
   >;
 };
 
-export default async function Collection({ handle, title, products }: Props) {
-  const t = await createT();
+export default function Collection({ handle, title, products }: Props) {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
 
   return (
     <section className="flex flex-col items-start gap-5">
@@ -39,7 +41,7 @@ export default async function Collection({ handle, title, products }: Props) {
               <h3>
                 <a
                   className="after:absolute after:inset-0 after:z-10 hover:underline after:content-empty"
-                  href={`/${l.get()}/products/${handle}`}
+                  href={`/${language}/products/${handle}`}
                 >
                   {title}
                 </a>
@@ -51,7 +53,7 @@ export default async function Collection({ handle, title, products }: Props) {
       </ul>
       <a
         className="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
-        href={`/${l.get()}/collections/${handle}`}
+        href={`/${language}/collections/${handle}`}
       >
         {t("View collection")}
       </a>

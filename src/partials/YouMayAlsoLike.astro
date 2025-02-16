@@ -4,8 +4,7 @@ import { request } from "graphql-request";
 import ProductImage from "@/components/ProductImage";
 import ProductPrice from "@/components/ProductPrice";
 import getProducts from "@/graphql/products.gql";
-import { l } from "@/store/l";
-import { createT } from "@/utils/i18n";
+import i18n from "i18next";
 
 interface Props {
   showButton?: true;
@@ -19,12 +18,10 @@ const {
 } = await request<GetProductsQuery>("https://mock.shop/api", getProducts, {
   first,
 });
-
-const t = await createT();
 ---
 
 <section class="my-8 flex flex-col gap-5">
-  <h2 class="text-2xl">{t('You may also like')}</h2>
+  <h2 class="text-2xl">{i18n.t('You may also like')}</h2>
   <ul class="grid grid-cols-2 gap-6 md:grid-cols-4">
     {
       products.map(
@@ -53,9 +50,9 @@ const t = await createT();
       <div class="mt-5 flex flex-col items-center">
         <a
           class="bg-primary px-8 py-3 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
-          href={`/${l.get()}/collections/all`}
+          href={`/${i18n.language}/collections/all`}
         >
-          {t('View all')}
+          {i18n.t('View all')}
         </a>
       </div>
     )

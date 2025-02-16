@@ -1,5 +1,4 @@
-import { l } from "@/store/l";
-import { createT } from "@/utils/i18n";
+import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 
 type Props = {
@@ -7,8 +6,11 @@ type Props = {
   iconOnly?: boolean;
 };
 
-export default async function AccountLogin({ className, iconOnly }: Props) {
-  const t = await createT();
+export default function AccountLogin({ className, iconOnly }: Props) {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
 
   return (
     <a
@@ -16,7 +18,7 @@ export default async function AccountLogin({ className, iconOnly }: Props) {
         className,
         "inline-flex gap-2 items-center text-default p-0.5",
       ])}
-      href={`/${l.get()}/account/login`}
+      href={`/${language}/account/login`}
       aria-label="Log in"
     >
       <i className="i-astrim:account block size-5 cursor-pointer transition-transform hover:scale-110"></i>

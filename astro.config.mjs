@@ -8,6 +8,8 @@ import vercel from "@astrojs/vercel";
 import graphql from "@rollup/plugin-graphql";
 import UnoCSS from "unocss/astro";
 
+import reactI18next from "astro-react-i18next";
+
 export default defineConfig({
   site: "https://astrim.vercel.app",
 
@@ -17,6 +19,10 @@ export default defineConfig({
     react(),
     UnoCSS({
       injectReset: true,
+    }),
+    reactI18next({
+      defaultLocale: "en",
+      locales: ["en", "zh"],
     }),
   ],
 
@@ -32,13 +38,13 @@ export default defineConfig({
     plugins: [graphql()],
   },
 
-  i18n: {
-    locales: ["en", "zh"],
-    defaultLocale: "en",
-    routing: "manual",
-  },
+  // i18n: {
+  //   locales: ["en", "zh"],
+  //   defaultLocale: "en",
+  //   routing: "manual",
+  // },
 
-  redirects: {
-    "/": "/en/",
-  },
+  // redirects: {
+  //   "/": "/en/",
+  // },
 });
