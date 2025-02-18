@@ -1,0 +1,60 @@
+diff --git a/node_modules/astro-react-i18next/dist/index.js b/node_modules/astro-react-i18next/dist/index.js
+index bb894d4..f53d30e 100644
+--- a/node_modules/astro-react-i18next/dist/index.js
++++ b/node_modules/astro-react-i18next/dist/index.js
+@@ -19,7 +19,6 @@ function buildI18nextInitScript({
+     ...options
+   };
+   let imports = "";
+-  let i18nextPlugins = "";
+   let i18nextOptions = "";
+   if (backendType === "fs") {
+     imports = `
+@@ -32,18 +31,6 @@ function buildI18nextInitScript({
+   if (backendType === "http") {
+     imports = `
+       import Backend from "i18next-http-backend";
+-      import LanguageDetector from "i18next-browser-languagedetector";
+-    `;
+-    i18nextPlugins = `
+-      .use(LanguageDetector)
+-    `;
+-    i18nextOptions = `
+-      detection: {
+-        caches: ["cookie", "localStorage"],
+-        order: ["cookie", "localStorage"],
+-        lookupCookie: 'i18next',
+-        lookupLocalStorage: 'i18next',
+-      },
+     `;
+   }
+   return `
+@@ -54,7 +41,6 @@ function buildI18nextInitScript({
+     i18n
+       .use(Backend)
+       .use(initReactI18next)
+-      ${i18nextPlugins}
+       .init({
+         fallbackLng: "${mergedOptions.defaultLocale}",
+         supportedLngs: ${JSON.stringify(mergedOptions.locales)},
+diff --git a/node_modules/astro-react-i18next/dist/middleware-server.js b/node_modules/astro-react-i18next/dist/middleware-server.js
+index d5d94df..11ab01e 100644
+--- a/node_modules/astro-react-i18next/dist/middleware-server.js
++++ b/node_modules/astro-react-i18next/dist/middleware-server.js
+@@ -24,16 +24,11 @@ function getLocalizedPathname(pathname = "", locale = "") {
+ async function onRequest(context, next) {
+   const { defaultLocale, locales } = getLocaleConfig();
+   const localeFromPathname = context.url.pathname.split("/")[1];
+-  const localeFromCookie = context.cookies.get("i18next")?.value;
+-  const localeFromHeader = context.preferredLocale;
+   const nextLocale = [
+     localeFromPathname,
+-    localeFromCookie,
+-    localeFromHeader,
+     defaultLocale
+   ].find((locale) => locale && locales.includes(locale));
+   await i18n2.changeLanguage(nextLocale);
+-  context.cookies.set("i18next", nextLocale || "", { path: "/" });
+   const { hash, pathname, search } = context.url;
+   const nextPathname = getLocalizedPathname(pathname, nextLocale);
+   if (nextPathname !== pathname) {
