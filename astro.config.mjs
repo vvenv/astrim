@@ -11,7 +11,11 @@ import reactI18next from "astro-react-i18next";
 import UnoCSS from "unocss/astro";
 
 export default defineConfig({
-  site: "https://astrim.vercel.app",
+  site: process.env.CLOUDFLARE
+    ? "https://astrim.pages.dev"
+    : process.env.VERCEL
+    ? "https://astrim.vercel.app"
+    : "http://localhost:4321",
 
   integrations: [
     mdx(),
