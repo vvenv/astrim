@@ -1,9 +1,10 @@
+// @ts-check
 const INTEGRATION_NAME = "i18n";
 
+/**
+ * @returns {import("astro").AstroIntegration}
+ */
 export default function I18nIntegration() {
-  /**
-   * @type {import("astro").AstroIntegration}
-   */
   return {
     name: INTEGRATION_NAME,
     hooks: {
