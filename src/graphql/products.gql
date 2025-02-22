@@ -1,7 +1,7 @@
 query getProducts($first: Int = 4) {
   products(first: $first) {
     nodes {
-      id
+      handle
       title
       featuredImage {
         id

@@ -8653,7 +8653,7 @@ export type GetProductsQueryVariables = Exact<{
 
 
 export type GetProductsQuery = { products: { nodes: Array<(
-      Pick<Product, 'id' | 'title'>
+      Pick<Product, 'handle' | 'title'>
       & { featuredImage?: Maybe<Pick<Image, 'id' | 'url'>>, variants: { nodes: Array<{ price: Pick<MoneyV2, 'amount' | 'currencyCode'> }> } }
     )> } };
 
@@ -8662,7 +8662,7 @@ interface GeneratedQueryTypes {
   "query getCollection($handle: String!, $first: Int = 6, $after: String = \"\") {\n  collection(handle: $handle) {\n    title\n    description\n    products(first: $first, after: $after) {\n      nodes {\n        handle\n        title\n        featuredImage {\n          id\n          url\n        }\n        variants(first: 1) {\n          nodes {\n            price {\n              amount\n              currencyCode\n            }\n          }\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        hasNextPage\n        startCursor\n        endCursor\n      }\n    }\n  }\n}": {return: GetCollectionQuery, variables: GetCollectionQueryVariables},
   "query getCollections($first: Int = 6) {\n  collections(first: $first) {\n    nodes {\n      handle\n      title\n      products(first: 4) {\n        nodes {\n          handle\n          title\n          featuredImage {\n            id\n            url\n          }\n          variants(first: 1) {\n            nodes {\n              price {\n                amount\n                currencyCode\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}": {return: GetCollectionsQuery, variables: GetCollectionsQueryVariables},
   "query getProduct($handle: String!) {\n  product(handle: $handle) {\n    id\n    title\n    description\n    featuredImage {\n      id\n      url\n    }\n    selectedOrFirstAvailableVariant {\n      selectedOptions {\n        name\n        value\n      }\n    }\n    options {\n      name\n      optionValues {\n        id\n        name\n      }\n    }\n    variants(first: 100) {\n      nodes {\n        id\n        availableForSale\n        quantityAvailable\n        image {\n          id\n          url\n        }\n        price {\n          amount\n          currencyCode\n        }\n        selectedOptions {\n          name\n          value\n        }\n      }\n    }\n  }\n}": {return: GetProductQuery, variables: GetProductQueryVariables},
-  "query getProducts($first: Int = 4) {\n  products(first: $first) {\n    nodes {\n      id\n      title\n      featuredImage {\n        id\n        url\n      }\n      variants(first: 1) {\n        nodes {\n          price {\n            amount\n            currencyCode\n          }\n        }\n      }\n    }\n  }\n}": {return: GetProductsQuery, variables: GetProductsQueryVariables},
+  "query getProducts($first: Int = 4) {\n  products(first: $first) {\n    nodes {\n      handle\n      title\n      featuredImage {\n        id\n        url\n      }\n      variants(first: 1) {\n        nodes {\n          price {\n            amount\n            currencyCode\n          }\n        }\n      }\n    }\n  }\n}": {return: GetProductsQuery, variables: GetProductsQueryVariables},
 }
 
 interface GeneratedMutationTypes {

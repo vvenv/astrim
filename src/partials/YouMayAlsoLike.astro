@@ -26,6 +26,7 @@ const {
     {
       products.map(
         ({
+          handle,
           featuredImage,
           title,
           variants: {
@@ -36,9 +37,16 @@ const {
             ],
           },
         }) => (
-          <li>
+          <li class="relative">
             <ProductImage src={featuredImage!.url as string} alt={title} />
-            <h3>{title}</h3>
+              <h3>
+                <a
+                  class="after:absolute after:inset-0 after:z-10 hover:underline after:content-empty"
+                  href={`/${i18n.language}/products/${handle}`}
+                >
+                  {title}
+                </a>
+              </h3>
             <ProductPrice amount={amount as string} currency={currencyCode} />
           </li>
         )
