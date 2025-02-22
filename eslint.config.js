@@ -28,6 +28,7 @@ export default [
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
+      "jsx-a11y/label-has-associated-control": "off",
     },
   },
 ];

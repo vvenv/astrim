@@ -1,4 +1,4 @@
-import AccountLogin from "./AccountLogin";
+import LoginEntry from "./LoginEntry";
 import HeaderLogo from "./HeaderLogo";
 import MenuDrawer from "./MenuDrawer";
 import Search from "./Search";
@@ -11,7 +11,7 @@ export default function Header() {
       <HeaderLogo />
       <div className="flex items-center justify-end gap-2">
         <Search />
-        <AccountLogin className="hidden md:block" iconOnly />
+        <LoginEntry className="hidden md:block" iconOnly />
         <a
           className="p-0.5 text-default"
           href={`/${i18n.language}/cart`}

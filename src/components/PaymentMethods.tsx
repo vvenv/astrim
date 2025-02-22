@@ -41,12 +41,8 @@ export default function PaymentMethods() {
             fill="#fff"
             d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"
           ></path>
-          <circle fill="#EB001B" cx="15" cy="12" r="7">
-            {" "}
-          </circle>
-          <circle fill="#F79E1B" cx="23" cy="12" r="7">
-            {" "}
-          </circle>
+          <circle fill="#EB001B" cx="15" cy="12" r="7"></circle>
+          <circle fill="#F79E1B" cx="23" cy="12" r="7"></circle>
           <path
             fill="#FF5F00"
             d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"
@@ -205,21 +201,11 @@ export default function PaymentMethods() {
               gradientUnits="userSpaceOnUse"
             >
               <stop stopColor="#F89F20"> </stop>
-              <stop offset=".25" stopColor="#F79A20">
-                {" "}
-              </stop>
-              <stop offset=".533" stopColor="#F68D20">
-                {" "}
-              </stop>
-              <stop offset=".62" stopColor="#F58720">
-                {" "}
-              </stop>
-              <stop offset=".723" stopColor="#F48120">
-                {" "}
-              </stop>
-              <stop offset="1" stopColor="#F37521">
-                {" "}
-              </stop>
+              <stop offset=".25" stopColor="#F79A20"></stop>
+              <stop offset=".533" stopColor="#F68D20"></stop>
+              <stop offset=".62" stopColor="#F58720"></stop>
+              <stop offset=".723" stopColor="#F48120"></stop>
+              <stop offset="1" stopColor="#F37521"></stop>
             </linearGradient>
             <linearGradient
               id="pi-paint1_linear"
@@ -230,15 +216,9 @@ export default function PaymentMethods() {
               gradientUnits="userSpaceOnUse"
             >
               <stop stopColor="#F58720"> </stop>
-              <stop offset=".359" stopColor="#E16F27">
-                {" "}
-              </stop>
-              <stop offset=".703" stopColor="#D4602C">
-                {" "}
-              </stop>
-              <stop offset=".982" stopColor="#D05B2E">
-                {" "}
-              </stop>
+              <stop offset=".359" stopColor="#E16F27"></stop>
+              <stop offset=".703" stopColor="#D4602C"></stop>
+              <stop offset=".982" stopColor="#D05B2E"></stop>
             </linearGradient>
           </defs>
         </svg>

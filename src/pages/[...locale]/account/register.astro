@@ -1,0 +1,11 @@
+---
+import Layout from "@/layouts/Default.astro";
+import AccountRegister from "@/components/account/Register";
+import i18n from "@/i18n/i18n.mjs";
+
+export const prerender = false;
+---
+
+<Layout title={i18n.t("Create Account")}>
+  <AccountRegister />
+</Layout>

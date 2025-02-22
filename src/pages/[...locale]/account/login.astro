@@ -1,0 +1,11 @@
+---
+import Layout from "@/layouts/Default.astro";
+import AccountLogin from "@/components/account/Login";
+import i18n from "@/i18n/i18n.mjs";
+
+export const prerender = false;
+---
+
+<Layout title={i18n.t("Account")}>
+  <AccountLogin />
+</Layout>

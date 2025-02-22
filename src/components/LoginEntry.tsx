@@ -6,7 +6,7 @@ type Props = {
   iconOnly?: boolean;
 };
 
-export default function AccountLogin({ className, iconOnly }: Props) {
+export default function LoginEntry({ className, iconOnly }: Props) {
   return (
     <a
       className={clsx([

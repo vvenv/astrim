@@ -5,6 +5,7 @@ import ProductImage from "@/components/ProductImage";
 import ProductPrice from "@/components/ProductPrice";
 import getProducts from "@/graphql/products.gql";
 import i18n from "@/i18n/i18n.mjs";
+import { Button } from "@/components/form/Button";
 
 interface Props {
   showButton?: true;
@@ -39,14 +40,14 @@ const {
         }) => (
           <li class="relative">
             <ProductImage src={featuredImage!.url as string} alt={title} />
-              <h3>
-                <a
-                  class="after:absolute after:inset-0 after:z-10 hover:underline after:content-empty"
-                  href={`/${i18n.language}/products/${handle}`}
-                >
-                  {title}
-                </a>
-              </h3>
+            <h3>
+              <a
+                class="after:absolute after:inset-0 after:z-10 hover:underline after:content-empty"
+                href={`/${i18n.language}/products/${handle}`}
+              >
+                {title}
+              </a>
+            </h3>
             <ProductPrice amount={amount as string} currency={currencyCode} />
           </li>
         )
@@ -56,12 +57,9 @@ const {
   {
     showButton && (
       <div class="mt-5 flex flex-col items-center">
-        <a
-          class="bg-primary px-8 py-3 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
-          href={`/${i18n.language}/collections/all`}
-        >
+        <Button href={`/${i18n.language}/collections/all`}>
           {i18n.t("View all")}
-        </a>
+        </Button>
       </div>
     )
   }

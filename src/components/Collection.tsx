@@ -2,6 +2,7 @@ import type { GetCollectionQuery } from "api.generated";
 import ProductImage from "./ProductImage";
 import ProductPrice from "./ProductPrice";
 import i18n from "@/i18n/i18n.mjs";
+import { Button } from "./form/Button";
 
 type Props = {
   handle: string;
@@ -46,12 +47,10 @@ export default function Collection({ handle, title, products }: Props) {
           )
         )}
       </ul>
-      <a
-        className="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
-        href={`/${i18n.language}/collections/${handle}`}
-      >
+
+      <Button href={`/${i18n.language}/collections/${handle}`}>
         {i18n.t("View collection")}
-      </a>
+      </Button>
     </section>
   );
 }

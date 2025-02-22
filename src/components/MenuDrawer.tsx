@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import AccountLogin from "./AccountLogin";
+import LoginEntry from "./LoginEntry";
 import CollectionMenu from "./CollectionMenu";
 import SocialMedia from "./SocialMedia";
 
@@ -77,7 +77,7 @@ export default function MenuDrawer() {
               </ul>
             </nav>
             <div className="flex flex-col gap-4 bg-invert/3 p-8">
-              <AccountLogin className="md:hidden" /> Localization
+              <LoginEntry className="md:hidden" /> Localization
               <SocialMedia />
             </div>
           </div>
