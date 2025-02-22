@@ -1,11 +1,11 @@
-import { useTranslation } from "react-i18next";
+import i18n from "@/i18n/i18n.mjs";
 
 export default function EmailSubscribe() {
-  const { t } = useTranslation();
-
   return (
     <section className="flex flex-col items-center gap-2">
-      <h2 className="text-base md:text-2xl">{t("Subscribe to our emails")}</h2>
+      <h2 className="text-base md:text-2xl">
+        {i18n.t("Subscribe to our emails")}
+      </h2>
       <form className="relative">
         <input
           className="peer w-full border border-default/50 bg-transparent px-5 py-3 focus:pb-1 focus:pt-5 not-placeholder-shown:pb-1 not-placeholder-shown:pt-5 placeholder:opacity-0"
@@ -25,7 +25,7 @@ export default function EmailSubscribe() {
           htmlFor="subscribe-email"
           aria-controls="subscribe-email"
         >
-          {t("Email")}
+          {i18n.t("Email")}
         </label>
         <button
           className="absolute right-5 top-3.5"

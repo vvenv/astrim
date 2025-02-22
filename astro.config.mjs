@@ -7,8 +7,8 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 import graphql from "@rollup/plugin-graphql";
-import reactI18next from "astro-react-i18next";
 import UnoCSS from "unocss/astro";
+import i18n from "./i18n.mjs";
 
 export default defineConfig({
   site: process.env.CLOUDFLARE
@@ -24,10 +24,7 @@ export default defineConfig({
     UnoCSS({
       injectReset: true,
     }),
-    reactI18next({
-      defaultLocale: "en",
-      locales: ["en", "zh"],
-    }),
+    i18n(),
   ],
 
   output: "server",
@@ -59,6 +56,9 @@ export default defineConfig({
         "node:stream",
         "node:util",
       ],
+    },
+    build: {
+      minify: !process.env.CLOUDFLARE,
     },
   },
 });

@@ -1,7 +1,7 @@
 import type { GetCollectionQuery } from "api.generated";
 import ProductImage from "./ProductImage";
 import ProductPrice from "./ProductPrice";
-import { useTranslation } from "react-i18next";
+import i18n from "@/i18n/i18n.mjs";
 
 type Props = {
   handle: string;
@@ -14,11 +14,6 @@ type Props = {
 };
 
 export default function Collection({ handle, title, products }: Props) {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation();
-
   return (
     <section className="flex flex-col items-start gap-5">
       <h2 className="text-2xl">{title}</h2>
@@ -41,7 +36,7 @@ export default function Collection({ handle, title, products }: Props) {
               <h3>
                 <a
                   className="after:absolute after:inset-0 after:z-10 hover:underline after:content-empty"
-                  href={`/${language}/products/${handle}`}
+                  href={`/${i18n.language}/products/${handle}`}
                 >
                   {title}
                 </a>
@@ -53,9 +48,9 @@ export default function Collection({ handle, title, products }: Props) {
       </ul>
       <a
         className="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
-        href={`/${language}/collections/${handle}`}
+        href={`/${i18n.language}/collections/${handle}`}
       >
-        {t("View collection")}
+        {i18n.t("View collection")}
       </a>
     </section>
   );

@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import i18n from "@/i18n/i18n.mjs";
 import clsx from "clsx";
 import { useEffect } from "react";
 
@@ -68,11 +68,6 @@ const countries = [
 ];
 
 export default function Localization({ country, currency }: Props) {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation();
-
   const current =
     countries.find((c) => c.country === country && c.currency === currency) ??
     countries[0];
@@ -105,7 +100,7 @@ export default function Localization({ country, currency }: Props) {
 
   return (
     <section className="flex flex-col items-center gap-2">
-      <h2 className="">{t("Country/region")}</h2>
+      <h2 className="">{i18n.t("Country/region")}</h2>
       <details className="group" id="localization">
         <summary
           className="flex cursor-pointer items-center gap-8 border border-default/50 px-5 py-3 text-default"
@@ -140,7 +135,7 @@ export default function Localization({ country, currency }: Props) {
                 <li key={country} tabIndex={-1}>
                   <a
                     className="flex items-center justify-between gap-1 border border-default/0 py-2 pl-2 pr-8 transition-colors hover:border-default/50"
-                    href={`/${language}/${country}/${currency}`}
+                    href={`/${i18n.language}/${country}/${currency}`}
                   >
                     <span className="flex items-center gap-2">
                       <i

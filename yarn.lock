@@ -633,7 +633,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.23.2", "@babel/runtime@^7.25.0":
+"@babel/runtime@^7.0.0":
   version "7.26.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.26.9.tgz#aa4c6facc65b9cb3f87d75125ffd47781b475433"
   integrity sha512-aA63XwOkcl4xxQa3HjPMqOP6LiK0ZDv3mUPYEFXkpHbaFjtGggE1A61FjFzJnB+p7/oy2gA8E+rcBNl/zC1tMg==
@@ -706,25 +706,50 @@
   resolved "https://registry.yarnpkg.com/@cloudflare/workerd-darwin-64/-/workerd-darwin-64-1.20250204.0.tgz#4e61a4247b2e04227e0ccdd631127cbf0e80b791"
   integrity sha512-HpsgbWEfvdcwuZ8WAZhi1TlSCyyHC3tbghpKsOqGDaQNltyAFAWqa278TPNfcitYf/FmV4961v3eqUE+RFdHNQ==
 
+"@cloudflare/workerd-darwin-64@1.20250214.0":
+  version "1.20250214.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workerd-darwin-64/-/workerd-darwin-64-1.20250214.0.tgz#fa8712b23d834e72a9682599e5530837d821e000"
+  integrity sha512-cDvvedWDc5zrgDnuXe2qYcz/TwBvzmweO55C7XpPuAWJ9Oqxv81PkdekYxD8mH989aQ/GI5YD0Fe6fDYlM+T3Q==
+
 "@cloudflare/workerd-darwin-arm64@1.20250204.0":
   version "1.20250204.0"
   resolved "https://registry.yarnpkg.com/@cloudflare/workerd-darwin-arm64/-/workerd-darwin-arm64-1.20250204.0.tgz#7242a45a8c4ce5c8eec8b4362f2fdb7f1019b7ec"
   integrity sha512-AJ8Tk7KMJqePlch3SH8oL41ROtsrb07hKRHD6M+FvGC3tLtf26rpteAAMNYKMDYKzFNFUIKZNijYDFZjBFndXQ==
+
+"@cloudflare/workerd-darwin-arm64@1.20250214.0":
+  version "1.20250214.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workerd-darwin-arm64/-/workerd-darwin-arm64-1.20250214.0.tgz#10e58958d349135c2cbb062980808dc62cd6a8f0"
+  integrity sha512-NytCvRveVzu0mRKo+tvZo3d/gCUway3B2ZVqSi/TS6NXDGBYIJo7g6s3BnTLS74kgyzeDOjhu9j/RBJBS809qw==
 
 "@cloudflare/workerd-linux-64@1.20250204.0":
   version "1.20250204.0"
   resolved "https://registry.yarnpkg.com/@cloudflare/workerd-linux-64/-/workerd-linux-64-1.20250204.0.tgz#d3c255f201bf49bb8511ba734e506d87865ec151"
   integrity sha512-RIUfUSnDC8h73zAa+u1K2Frc7nc+eeQoBBP7SaqsRe6JdX8jfIv/GtWjQWCoj8xQFgLvhpJKZ4sTTTV+AilQbw==
 
+"@cloudflare/workerd-linux-64@1.20250214.0":
+  version "1.20250214.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workerd-linux-64/-/workerd-linux-64-1.20250214.0.tgz#1fe090a9232ccbfb71abe92f55b554a9fc2fb796"
+  integrity sha512-pQ7+aHNHj8SiYEs4d/6cNoimE5xGeCMfgU1yfDFtA9YGN9Aj2BITZgOWPec+HW7ZkOy9oWlNrO6EvVjGgB4tbQ==
+
 "@cloudflare/workerd-linux-arm64@1.20250204.0":
   version "1.20250204.0"
   resolved "https://registry.yarnpkg.com/@cloudflare/workerd-linux-arm64/-/workerd-linux-arm64-1.20250204.0.tgz#bda13fd9c919050ba436d2f3235407910d23843c"
   integrity sha512-8Ql8jDjoIgr2J7oBD01kd9kduUz60njofrBpAOkjCPed15He8e8XHkYaYow3g0xpae4S2ryrPOeoD3M64sRxeg==
 
+"@cloudflare/workerd-linux-arm64@1.20250214.0":
+  version "1.20250214.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workerd-linux-arm64/-/workerd-linux-arm64-1.20250214.0.tgz#e890f88fca6d86174069416298f3889c212f5fe6"
+  integrity sha512-Vhlfah6Yd9ny1npNQjNgElLIjR6OFdEbuR3LCfbLDCwzWEBFhIf7yC+Tpp/a0Hq7kLz3sLdktaP7xl3PJhyOjA==
+
 "@cloudflare/workerd-windows-64@1.20250204.0":
   version "1.20250204.0"
   resolved "https://registry.yarnpkg.com/@cloudflare/workerd-windows-64/-/workerd-windows-64-1.20250204.0.tgz#34096e76d25fe0e21b6e2774c8e8d827bd787208"
   integrity sha512-RpDJO3+to+e17X3EWfRCagboZYwBz2fowc+jL53+fd7uD19v3F59H48lw2BDpHJMRyhg6ouWcpM94OhsHv8ecA==
+
+"@cloudflare/workerd-windows-64@1.20250214.0":
+  version "1.20250214.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workerd-windows-64/-/workerd-windows-64-1.20250214.0.tgz#4e7666cc41196a215e11e720b27518311c957fa7"
+  integrity sha512-GMwMyFbkjBKjYJoKDhGX8nuL4Gqe3IbVnVWf2Q6086CValyIknupk5J6uQWGw2EBU3RGO3x4trDXT5WphQJZDQ==
 
 "@cloudflare/workers-types@^4.20250109.0":
   version "4.20250214.0"
@@ -3894,17 +3919,6 @@ astro-eslint-parser@^1.0.2:
     is-glob "^4.0.3"
     semver "^7.3.8"
 
-astro-react-i18next@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/astro-react-i18next/-/astro-react-i18next-0.1.3.tgz#2b9f299e6acf27daedd25290acaef7f20d27097b"
-  integrity sha512-K6GPofQ6O7eMtDu6A9dNb4c92TKRDhX21wLDWH0vo4kMg/j6G8+qSdE5QZgIVIPUY5u6rZvwbYEUBU8AzTLRSQ==
-  dependencies:
-    i18next "^24.0.2"
-    i18next-browser-languagedetector "^8.0.0"
-    i18next-fs-backend "^2.6.0"
-    i18next-http-backend "^3.0.1"
-    react-i18next "^15.1.2"
-
 astro@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/astro/-/astro-5.3.0.tgz#20a2772c019448f6797396f9dbabe72615877842"
@@ -4746,13 +4760,6 @@ cross-fetch@3.1.4:
   integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
   dependencies:
     node-fetch "2.6.1"
-
-cross-fetch@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-4.0.0.tgz#f037aef1580bb3a1a35164ea2a848ba81b445983"
-  integrity sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==
-  dependencies:
-    node-fetch "^2.6.12"
 
 cross-fetch@^3.0.6, cross-fetch@^3.1.5:
   version "3.2.0"
@@ -6632,13 +6639,6 @@ html-escaper@3.0.3:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-3.0.3.tgz#4d336674652beb1dcbc29ef6b6ba7f6be6fdfed6"
   integrity sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==
 
-html-parse-stringify@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/html-parse-stringify/-/html-parse-stringify-3.0.1.tgz#dfc1017347ce9f77c8141a507f233040c59c55d2"
-  integrity sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==
-  dependencies:
-    void-elements "3.1.0"
-
 html-void-elements@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/html-void-elements/-/html-void-elements-3.0.0.tgz#fc9dbd84af9e747249034d4d62602def6517f1d7"
@@ -6722,32 +6722,6 @@ https-proxy-agent@^7.0.0, https-proxy-agent@^7.0.5:
   dependencies:
     agent-base "^7.1.2"
     debug "4"
-
-i18next-browser-languagedetector@^8.0.0:
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-8.0.3.tgz#489d837b35a0ed59c357f018bd77a1ba3558aee9"
-  integrity sha512-beOOLArattPBc2YZG5IXGJytdYFgUR7cS8Wd6HT4IczIoWKgmTspOQ2yasaGklelVo5seLPmnEKvLHR+E/MdWQ==
-  dependencies:
-    "@babel/runtime" "^7.23.2"
-
-i18next-fs-backend@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/i18next-fs-backend/-/i18next-fs-backend-2.6.0.tgz#7b6b54c5ffc2a5073e47eda0673c002376fa1a3c"
-  integrity sha512-3ZlhNoF9yxnM8pa8bWp5120/Ob6t4lVl1l/tbLmkml/ei3ud8IWySCHt2lrY5xWRlSU5D9IV2sm5bEbGuTqwTw==
-
-i18next-http-backend@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/i18next-http-backend/-/i18next-http-backend-3.0.2.tgz#7c8daa31aa69679e155ec1f96a37846225bdf907"
-  integrity sha512-PdlvPnvIp4E1sYi46Ik4tBYh/v/NbYfFFgTjkwFl0is8A18s7/bx9aXqsrOax9WUbeNS6mD2oix7Z0yGGf6m5g==
-  dependencies:
-    cross-fetch "4.0.0"
-
-i18next@^24.0.2:
-  version "24.2.2"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-24.2.2.tgz#3ba3d213302068d569142737f03f30929de696de"
-  integrity sha512-NE6i86lBCKRYZa5TaUDkU5S4HFgLIEJRLr3Whf2psgaxBleQ2LC1YW1Vc+SCgkAW7VEzndT6al6+CzegSUHcTQ==
-  dependencies:
-    "@babel/runtime" "^7.23.2"
 
 iconv-lite@^0.4.24:
   version "0.4.24"
@@ -8424,6 +8398,23 @@ miniflare@3.20250204.1, miniflare@^3.20241230.1:
     youch "3.2.3"
     zod "3.22.3"
 
+miniflare@3.20250214.0:
+  version "3.20250214.0"
+  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-3.20250214.0.tgz#930c7e9014c6ea2c0a0484da95862b20210979d2"
+  integrity sha512-XKwn+X/V2CEpbRhoeaIcJHpV/Duz5Md5rxVT8I6S1oqd3aLZkn8cUX1tuxHpUvfQSPuXwWH+2ESLNnTf9PKEWg==
+  dependencies:
+    "@cspotcode/source-map-support" "0.8.1"
+    acorn "8.14.0"
+    acorn-walk "8.3.2"
+    exit-hook "2.2.1"
+    glob-to-regexp "0.4.1"
+    stoppable "1.1.0"
+    undici "^5.28.5"
+    workerd "1.20250214.0"
+    ws "8.18.0"
+    youch "3.2.3"
+    zod "3.22.3"
+
 minimatch@3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
@@ -8599,7 +8590,7 @@ node-fetch@2.6.1:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
-node-fetch@^2.6.1, node-fetch@^2.6.12, node-fetch@^2.6.7, node-fetch@^2.7.0:
+node-fetch@^2.6.1, node-fetch@^2.6.7, node-fetch@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.7.0.tgz#d0f0fa6e3e2dc1d27efcd8ad99d550bda94d187d"
   integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
@@ -9458,14 +9449,6 @@ react-dom@^19.0.0:
   integrity sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==
   dependencies:
     scheduler "^0.25.0"
-
-react-i18next@^15.1.2:
-  version "15.4.0"
-  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-15.4.0.tgz#87c755fb6d7a567eec134e4759b022a0baacb19e"
-  integrity sha512-Py6UkX3zV08RTvL6ZANRoBh9sL/ne6rQq79XlkHEdd82cZr2H9usbWpUNVadJntIZP2pu3M2rL1CN+5rQYfYFw==
-  dependencies:
-    "@babel/runtime" "^7.25.0"
-    html-parse-stringify "^3.0.1"
 
 react-refresh@^0.14.2:
   version "0.14.2"
@@ -11014,7 +10997,7 @@ undici-types@~6.20.0:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.20.0.tgz#8171bf22c1f588d1554d55bf204bc624af388433"
   integrity sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==
 
-undici@^5.28.4:
+undici@^5.28.4, undici@^5.28.5:
   version "5.28.5"
   resolved "https://registry.yarnpkg.com/undici/-/undici-5.28.5.tgz#b2b94b6bf8f1d919bc5a6f31f2c01deb02e54d4b"
   integrity sha512-zICwjrDrcrUE0pyyJc1I2QzBkLM8FINsgOrt6WjA+BgajVq9Nxu2PbFFXUrAggLfDXlZGZBVZYw7WNV5KiBiBA==
@@ -11320,11 +11303,6 @@ vitefu@^1.0.5:
   resolved "https://registry.yarnpkg.com/vitefu/-/vitefu-1.0.5.tgz#eab501e07da167bbb68e957685823e6b425e7ce2"
   integrity sha512-h4Vflt9gxODPFNGPwp4zAMZRpZR7eslzwH2c5hn5kNZ5rhnKyRJ50U+yGCdc2IRaBs8O4haIgLNGrV5CrpMsCA==
 
-void-elements@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
-  integrity sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==
-
 vue-flow-layout@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/vue-flow-layout/-/vue-flow-layout-0.1.1.tgz#4095d9e79b80e845f110d4d015de6faf2c71f735"
@@ -11487,6 +11465,17 @@ workerd@1.20250204.0:
     "@cloudflare/workerd-linux-arm64" "1.20250204.0"
     "@cloudflare/workerd-windows-64" "1.20250204.0"
 
+workerd@1.20250214.0:
+  version "1.20250214.0"
+  resolved "https://registry.yarnpkg.com/workerd/-/workerd-1.20250214.0.tgz#f996d64102b1ba91cd3566ffcd75152746a87d5e"
+  integrity sha512-QWcqXZLiMpV12wiaVnb3nLmfs/g4ZsFQq2mX85z546r3AX4CTIkXl0VP50W3CwqLADej3PGYiRDOTelDOwVG1g==
+  optionalDependencies:
+    "@cloudflare/workerd-darwin-64" "1.20250214.0"
+    "@cloudflare/workerd-darwin-arm64" "1.20250214.0"
+    "@cloudflare/workerd-linux-64" "1.20250214.0"
+    "@cloudflare/workerd-linux-arm64" "1.20250214.0"
+    "@cloudflare/workerd-windows-64" "1.20250214.0"
+
 wrangler@^3.101.0:
   version "3.109.1"
   resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-3.109.1.tgz#92191865bc4e593540e412434f1e0b7b880c460a"
@@ -11501,6 +11490,24 @@ wrangler@^3.101.0:
     path-to-regexp "6.3.0"
     unenv "2.0.0-rc.1"
     workerd "1.20250204.0"
+  optionalDependencies:
+    fsevents "~2.3.2"
+    sharp "^0.33.5"
+
+wrangler@^3.109.2:
+  version "3.109.2"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-3.109.2.tgz#e792c32b9656b71f9fec33b95f4de6fe0bb53fd8"
+  integrity sha512-CT8izugPBth5o1o4gLNcQrDkHKSX2Jthy6gkyhaWiy2pFrx+536NMn/atWilLA1t1uhIgddEI5BXDNudIkPPHA==
+  dependencies:
+    "@cloudflare/kv-asset-handler" "0.3.4"
+    "@esbuild-plugins/node-globals-polyfill" "0.2.3"
+    "@esbuild-plugins/node-modules-polyfill" "0.2.2"
+    blake3-wasm "2.1.5"
+    esbuild "0.17.19"
+    miniflare "3.20250214.0"
+    path-to-regexp "6.3.0"
+    unenv "2.0.0-rc.1"
+    workerd "1.20250214.0"
   optionalDependencies:
     fsevents "~2.3.2"
     sharp "^0.33.5"

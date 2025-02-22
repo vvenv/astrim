@@ -3,14 +3,9 @@ import Localization from "@/components/Localization";
 import PaymentMethods from "@/components/PaymentMethods";
 import SocialMedia from "@/components/SocialMedia";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import { useTranslation } from "react-i18next";
+import i18n from "@/i18n/i18n.mjs";
 
 export default function Footer() {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation();
-
   return (
     <footer className="bg-default px-4 pb-24 pt-8">
       <div className="mt-8 flex flex-col items-center gap-8 border-t border-default/8 pt-8">
@@ -22,13 +17,14 @@ export default function Footer() {
         <PaymentMethods />
         <section className="flex flex-col items-center gap-2">
           <p>
-            &copy; {new Date().getFullYear()} vvenv. {t("All rights reserved.")}
+            &copy; {new Date().getFullYear()} vvenv.{" "}
+            {i18n.t("All rights reserved.")}
           </p>
           <p className="mt-4 flex justify-center gap-4">
             <ThemeSwitcher />
             <a
               className="block p-0.5 text-default/50 no-underline hover:text-default/75"
-              href={language === "en" ? "/zh" : "/"}
+              href={i18n.language === "en" ? "/zh" : "/"}
               title="Toggle language"
             >
               <i className="i-astrim-language block size-5"></i>

@@ -2,7 +2,7 @@ import type { GetProductQuery } from "api.generated";
 import { useEffect, useMemo, useState } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedOptions } from "@/store/selectedOptions";
-import { useTranslation } from "react-i18next";
+import i18n from "@/i18n/i18n.mjs";
 
 type Props = {
   variants: NonNullable<
@@ -11,8 +11,6 @@ type Props = {
 };
 
 export default function AddToCart({ variants }: Props) {
-  const { t } = useTranslation();
-
   const $selectedOptions = useStore(selectedOptions);
 
   const [disabled, setDisabled] = useState(true);
@@ -42,7 +40,7 @@ export default function AddToCart({ variants }: Props) {
         className="block w-full cursor-pointer bg-primary px-8 py-3 text-primary-contrast disabled:cursor-not-allowed disabled:bg-primary/50 disabled:text-primary-contrast/50 hover:outline-1 hover:outline-primary hover:outline-solid disabled:outline-none"
         disabled={disabled}
       >
-        {t("Add to cart")}
+        {i18n.t("Add to cart")}
       </button>
     </section>
   );

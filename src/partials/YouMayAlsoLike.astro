@@ -4,12 +4,12 @@ import { request } from "graphql-request";
 import ProductImage from "@/components/ProductImage";
 import ProductPrice from "@/components/ProductPrice";
 import getProducts from "@/graphql/products.gql";
-import i18n from "i18next";
+import i18n from "@/i18n/i18n.mjs";
 
 interface Props {
   showButton?: true;
   first?: number;
-};
+}
 
 const { showButton, first } = Astro.props;
 
@@ -21,7 +21,7 @@ const {
 ---
 
 <section class="my-8 flex flex-col gap-5">
-  <h2 class="text-2xl">{i18n.t('You may also like')}</h2>
+  <h2 class="text-2xl">{i18n.t("You may also like")}</h2>
   <ul class="grid grid-cols-2 gap-6 md:grid-cols-4">
     {
       products.map(
@@ -52,7 +52,7 @@ const {
           class="bg-primary px-8 py-3 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
           href={`/${i18n.language}/collections/all`}
         >
-          {i18n.t('View all')}
+          {i18n.t("View all")}
         </a>
       </div>
     )

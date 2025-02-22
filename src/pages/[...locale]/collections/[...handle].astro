@@ -6,8 +6,7 @@ import ProductPrice from "@/components/ProductPrice";
 import getCollection from "@/graphql/collection.gql";
 import getCollectionBefore from "@/graphql/collection-before.gql";
 import Layout from "@/layouts/Default.astro";
-import i18n from "i18next";
-
+import i18n from "@/i18n/i18n.mjs";
 
 export const prerender = false;
 
@@ -75,7 +74,7 @@ const {
           class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
           href={`/${i18n.language}/collections/${handle}/-${startCursor}`}
         >
-          {i18n.t('Previous')}
+          {i18n.t("Previous")}
         </a>
       ) : (
         <i />
@@ -87,7 +86,7 @@ const {
           class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
           href={`/${i18n.language}/collections/${handle}/${endCursor}-`}
         >
-          {i18n.t('Next')}
+          {i18n.t("Next")}
         </a>
       ) : (
         <i />
