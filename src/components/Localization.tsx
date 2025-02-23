@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { useEffect } from "react";
 
 interface Props {
+  seamless?: boolean;
   country?: string;
   currency?: string;
 }
@@ -67,7 +68,7 @@ const countries = [
   },
 ];
 
-export default function Localization({ country, currency }: Props) {
+export default function Localization({ seamless, country, currency }: Props) {
   const current =
     countries.find((c) => c.country === country && c.currency === currency) ??
     countries[0];
@@ -100,10 +101,13 @@ export default function Localization({ country, currency }: Props) {
 
   return (
     <section className="flex flex-col items-center gap-2">
-      <h2 className="">{i18n.t("Country/region")}</h2>
+      {seamless ? null : <h2>{i18n.t("Country/region")}</h2>}
       <details className="group" id="localization">
         <summary
-          className="flex cursor-pointer items-center gap-8 border border-default/50 px-5 py-3 text-default"
+          className={clsx(
+            "flex cursor-pointer items-center py-3 text-default",
+            seamless ? "gap-4" : "gap-8 px-5 border border-default/50"
+          )}
           aria-label="Select country/region"
         >
           <span className="flex items-center gap-1">

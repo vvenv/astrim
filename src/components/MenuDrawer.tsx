@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import LoginEntry from "./LoginEntry";
 import CollectionMenu from "./CollectionMenu";
 import SocialMedia from "./SocialMedia";
+import Localization from "./Localization";
 
 export default function MenuDrawer() {
   useEffect(() => {
@@ -76,8 +77,9 @@ export default function MenuDrawer() {
                 </li>
               </ul>
             </nav>
-            <div className="flex flex-col gap-4 bg-invert/3 p-8">
-              <LoginEntry className="md:hidden" /> Localization
+            <div className="flex flex-col items-start gap-4 bg-invert/3 p-8">
+              <LoginEntry className="md:hidden" />
+              <Localization seamless />
               <SocialMedia />
             </div>
           </div>
