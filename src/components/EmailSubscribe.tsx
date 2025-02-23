@@ -23,7 +23,7 @@ export default function EmailSubscribe() {
         <button
           className="absolute right-5 top-3.5"
           type="submit"
-          aria-label="Subscribe"
+          aria-label={i18n.t("Subscribe")}
         >
           <i className="i-astrim-arrow block size-5"></i>
         </button>

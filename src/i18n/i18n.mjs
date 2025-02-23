@@ -21,4 +21,17 @@ const i18n = {
   t: (key) => i18n.translations[key] ?? key,
 };
 
+if (typeof window !== "undefined") {
+  const locale = location.pathname.split("/")[1];
+  i18n.language = locale || i18n.default;
+  i18n.translations = await import(`./locales/${i18n.language}/common.json`)
+    .then((module) => module.default)
+    .catch(() => ({}));
+  if (i18n.language !== locale) {
+    location.replace(
+      `/${i18n.language}${location.pathname}${location.search}${location.hash}`
+    );
+  }
+}
+
 export default i18n;

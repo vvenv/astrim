@@ -11,7 +11,7 @@ export default function I18nIntegration() {
       "astro:config:setup": ({ addMiddleware, updateConfig }) => {
         addMiddleware({
           entrypoint: "@/i18n/middleware.mjs",
-          order: "post",
+          order: "pre",
         });
         updateConfig({
           i18n: {
