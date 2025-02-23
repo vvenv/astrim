@@ -3,7 +3,7 @@ import Localization from "@/components/Localization";
 import PaymentMethods from "@/components/PaymentMethods";
 import SocialMedia from "@/components/SocialMedia";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import i18n from "@/i18n/i18n.mjs";
+import i18n from "@/i18n";
 
 export default function Footer() {
   return (

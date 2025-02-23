@@ -1,4 +1,4 @@
-import i18n from "@/i18n/i18n.mjs";
+import i18n from "@/i18n";
 import { SITE_TITLE } from "../consts";
 
 export default function HeaderLogo() {

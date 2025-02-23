@@ -1,6 +1,6 @@
-import i18n from "@/i18n/i18n.mjs";
+import i18n from "@/i18n";
 import clsx from "clsx";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 interface Props {
   seamless?: boolean;
@@ -73,10 +73,11 @@ export default function Localization({ seamless, country, currency }: Props) {
     countries.find((c) => c.country === country && c.currency === currency) ??
     countries[0];
 
+  const closeLocalization = useCallback(() => {
+    document.querySelector("#localization")?.removeAttribute("open");
+  }, []);
+
   useEffect(() => {
-    const closeLocalization = () => {
-      document.querySelector("#localization")?.removeAttribute("open");
-    };
     const clickOutside = (event: any) => {
       const el = document.querySelector("#localization-list");
       if (!el?.contains(event.target)) {
@@ -97,7 +98,7 @@ export default function Localization({ seamless, country, currency }: Props) {
       attributes: true,
       attributeFilter: ["open"],
     });
-  }, []);
+  }, [closeLocalization]);
 
   return (
     <section className="flex flex-col items-center gap-2">
@@ -131,6 +132,7 @@ export default function Localization({ seamless, country, currency }: Props) {
               type="button"
               id="localization-list-close"
               aria-label="Close"
+              onClick={closeLocalization}
             >
               <i className="i-astrim:close block size-5"></i>
             </button>

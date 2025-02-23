@@ -2,7 +2,7 @@ import LoginEntry from "./LoginEntry";
 import HeaderLogo from "./HeaderLogo";
 import MenuDrawer from "./MenuDrawer";
 import Search from "./Search";
-import i18n from "@/i18n/i18n.mjs";
+import i18n from "@/i18n";
 
 export default function Header() {
   return (

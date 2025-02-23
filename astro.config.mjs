@@ -8,7 +8,6 @@ import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 import graphql from "@rollup/plugin-graphql";
 import UnoCSS from "unocss/astro";
-import i18n from "./i18n.mjs";
 
 export default defineConfig({
   site: process.env.CLOUDFLARE
@@ -24,7 +23,6 @@ export default defineConfig({
     UnoCSS({
       injectReset: true,
     }),
-    i18n(),
   ],
 
   output: "server",
@@ -36,6 +34,16 @@ export default defineConfig({
     : node({
         mode: "standalone",
       }),
+
+  i18n: {
+    locales: ["en", "zh"],
+    defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
+      fallbackType: "redirect",
+    },
+  },
 
   vite: {
     plugins: [graphql()],

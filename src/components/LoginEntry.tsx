@@ -1,4 +1,4 @@
-import i18n from "@/i18n/i18n.mjs";
+import i18n from "@/i18n";
 import clsx from "clsx";
 
 type Props = {

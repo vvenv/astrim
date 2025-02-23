@@ -2,7 +2,7 @@ import type { GetProductQuery } from "api.generated";
 import { useEffect, useMemo, useState } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedOptions } from "@/store/selectedOptions";
-import i18n from "@/i18n/i18n.mjs";
+import i18n from "@/i18n";
 
 type Props = {
   variants: NonNullable<

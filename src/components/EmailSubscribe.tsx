@@ -1,4 +1,4 @@
-import i18n from "@/i18n/i18n.mjs";
+import i18n from "@/i18n";
 import { Input } from "./form/Input";
 
 export default function EmailSubscribe() {

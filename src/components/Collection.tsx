@@ -1,7 +1,7 @@
 import type { GetCollectionQuery } from "api.generated";
 import ProductImage from "./ProductImage";
 import ProductPrice from "./ProductPrice";
-import i18n from "@/i18n/i18n.mjs";
+import i18n from "@/i18n";
 import { Button } from "./form/Button";
 
 type Props = {
