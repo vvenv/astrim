@@ -1,0 +1,28 @@
+---
+import { Button } from "@/components/form/Button";
+import i18n from "@/i18n/i18n.mjs";
+---
+
+<section
+  class="relative flex flex-col items-center justify-center gap-3 overflow-hidden py-12 md:py-18"
+>
+  <div class="absolute inset-0" style="clip-path: inset(0)">
+    <div class="fixed inset-0 z-0 grid grid-cols-2">
+      <img
+        class="h-full w-full object-cover"
+        src="/images/hero-1.jpg"
+        alt="A woman crouches while holding multiple blue handbags"
+      />
+      <img
+        class="h-full w-full object-cover"
+        src="/images/hero-2.jpg"
+        alt="A woman's feet in the air, balancing a blue bag"
+      />
+    </div>
+  </div>
+  <h2 class="z-10 text-3xl">{i18n.t("Industrial design meets fashion.")}</h2>
+  <p class="z-10">{i18n.t("Atypical leather goods")}</p>
+  <Button className="z-10 mt-3" href={`/${i18n.language}/collections/all`}>
+    {i18n.t("Shop now")}
+  </Button>
+</section>
