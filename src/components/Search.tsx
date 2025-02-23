@@ -22,6 +22,7 @@ export default function Search() {
         ?.removeEventListener("click", closeSearch);
     };
   }, []);
+
   return (
     <details className="group" id="search">
       <summary className="flex p-3 text-default" aria-label="Toggle search">
@@ -38,7 +39,7 @@ export default function Search() {
         >
           <div className="flex flex-1 items-center border border-default/50 pr-2 focus:border-2 focus:border-default">
             <input
-              className="w-full appearance-none px-3 py-1 outline-none"
+              className="w-full appearance-none bg-transparent px-3 py-1 outline-none"
               type="search"
               name="q"
               defaultValue=""
