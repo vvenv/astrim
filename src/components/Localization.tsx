@@ -94,7 +94,7 @@ export default function Localization({ seamless, country, currency }: Props) {
           </span>
           <i className="i-astrim:caret block size-3"></i>
         </MenuButton>
-        <MenuItems className="h-xs w-52 overflow-auto border border-default/50 bg-default -translate-y-1" anchor="top start" transition>
+        <MenuItems className="h-52 w-52 overflow-auto border border-default/50 bg-default -translate-y-1" anchor="top start" transition>
           {countries.map(({ flag, country, currency, sign }) => (
             <MenuItem key={country}>
               <a

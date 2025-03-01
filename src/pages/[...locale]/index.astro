@@ -14,10 +14,10 @@ const {
 ---
 
 <Layout>
-  <div class="-mx-12 -my-8">
+  <div class="mb-12 -mx-12 -mt-8">
     <Hero />
   </div>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-12">
     {
       collections.map(({ handle, title, products: { nodes: products } }) => (
         <Collection handle={handle} title={title} products={products} />

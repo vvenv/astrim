@@ -4,7 +4,7 @@ import { ComboInput } from '../form/ComboInput'
 
 export default function AccountLogin() {
   return (
-    <section className="flex flex-col gap-12">
+    <section className="mx-auto max-w-sm flex flex-col gap-12">
       <h1 className="text-center text-3xl" tabIndex={-1}>
         {i18n.t('Login')}
       </h1>

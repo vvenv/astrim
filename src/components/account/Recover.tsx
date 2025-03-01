@@ -4,7 +4,7 @@ import { ComboInput } from '../form/ComboInput'
 
 export default function AccountRecover() {
   return (
-    <section className="flex flex-col gap-6">
+    <section className="mx-auto max-w-sm flex flex-col gap-6">
       <h1 className="text-center text-3xl" tabIndex={-1}>
         {i18n.t('Reset your password')}
       </h1>

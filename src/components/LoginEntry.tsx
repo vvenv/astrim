@@ -2,16 +2,16 @@ import i18n from '@/i18n'
 import clsx from 'clsx'
 
 interface Props {
-  className?: string
+  desktopOnly?: boolean
   iconOnly?: boolean
 }
 
-export default function LoginEntry({ className, iconOnly }: Props) {
+export default function LoginEntry({ desktopOnly, iconOnly }: Props) {
   return (
     <a
       className={clsx([
-        className,
-        'inline-flex gap-2 items-center text-default p-0.5',
+        desktopOnly ? 'hidden md:inline-flex' : 'inline-flex',
+        'gap-2 items-center text-default p-0.5',
       ])}
       href={`/${i18n.language}/account/login`}
       aria-label="Log in"
