@@ -135,15 +135,10 @@
     vite "^6.2.0"
     wrangler "^3.101.0"
 
-"@astrojs/compiler@^2.0.0":
+"@astrojs/compiler@^2.0.0", "@astrojs/compiler@^2.10.4":
   version "2.10.4"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-2.10.4.tgz#883e469600d06d101d77829c91c4215b270cd503"
   integrity sha512-86B3QGagP99MvSNwuJGiYSBHnh8nLvm2Q1IFI15wIUJJsPeQTO3eb2uwBmrqRsXykeR/mBzH8XCgz5AAt1BJrQ==
-
-"@astrojs/compiler@^2.10.3":
-  version "2.10.3"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-2.10.3.tgz#852386445029f7765a70b4c1d1140e175e1d8c27"
-  integrity sha512-bL/O7YBxsFt55YHU021oL+xz+B/9HvGNId3F9xURN16aeqDK9juHGktdkCSXz+U4nqFACq6ZFvWomOzhV+zfPw==
 
 "@astrojs/internal-helpers@0.6.0":
   version "0.6.0"
@@ -4341,12 +4336,12 @@ astro-eslint-parser@^1.0.2:
     is-glob "^4.0.3"
     semver "^7.3.8"
 
-astro@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-5.4.0.tgz#481e9866c9632bdde13bd426af7f8ee43155892e"
-  integrity sha512-7A//zrCtJUGfJcQAt6PDhMu4a6pogvnK54HLXnYlPnKSWQZu/tKIYWfyvocVnTuEYIPExIN3CpjNAFFLoweJVw==
+astro@^5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-5.4.1.tgz#7f24f8408b3f7a12cec6736ccbdb5bc7dc0bbd4d"
+  integrity sha512-z9BiBz8pV7pZVn1evZv/9bJil3A9UZNyEjDFH3IjD87ioz95HHGLgbjRbbqF1EwSy8JOLKlMNyuQPqjrX8xqWw==
   dependencies:
-    "@astrojs/compiler" "^2.10.3"
+    "@astrojs/compiler" "^2.10.4"
     "@astrojs/internal-helpers" "0.6.0"
     "@astrojs/markdown-remark" "6.2.0"
     "@astrojs/telemetry" "3.2.0"
@@ -6502,7 +6497,7 @@ fbjs@^3.0.0:
     setimmediate "^1.0.5"
     ua-parser-js "^1.0.35"
 
-fdir@^6.4.2, fdir@^6.4.3:
+fdir@^6.4.3:
   version "6.4.3"
   resolved "https://registry.yarnpkg.com/fdir/-/fdir-6.4.3.tgz#011cdacf837eca9b811c89dbb902df714273db72"
   integrity sha512-PMXmW2y1hDDfTSRc9gaXIuCCRpuoz3Kaz8cUelp3smouvfT632ozg2vrT6lJsHKKOF59YLbOGfAWGUcKEfRMQw==
@@ -11507,15 +11502,7 @@ tinyexec@^0.3.2:
   resolved "https://registry.yarnpkg.com/tinyexec/-/tinyexec-0.3.2.tgz#941794e657a85e496577995c6eef66f53f42b3d2"
   integrity sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==
 
-tinyglobby@^0.2.10:
-  version "0.2.10"
-  resolved "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.10.tgz#e712cf2dc9b95a1f5c5bbd159720e15833977a0f"
-  integrity sha512-Zc+8eJlFMvgatPZTl6A9L/yht8QqdmUNtURHaKZLmKBE12hNPSrqNkUp2cs3M/UKmNVVAMFQYSjYIVHDjW5zew==
-  dependencies:
-    fdir "^6.4.2"
-    picomatch "^4.0.2"
-
-tinyglobby@^0.2.12:
+tinyglobby@^0.2.10, tinyglobby@^0.2.12:
   version "0.2.12"
   resolved "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.12.tgz#ac941a42e0c5773bd0b5d08f32de82e74a1a61b5"
   integrity sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==
