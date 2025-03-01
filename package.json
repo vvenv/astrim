@@ -34,7 +34,7 @@
     "@astrojs/vercel": "^8.1.0",
     "@headlessui/react": "^2.2.0",
     "@nanostores/react": "^0.8.4",
-    "astro": "^5.4.0",
+    "astro": "^5.4.1",
     "clsx": "^2.1.1",
     "graphql": "^16.10.0",
     "graphql-request": "^7.1.2",
