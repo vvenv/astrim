@@ -1,9 +1,9 @@
-import EmailSubscribe from "@/components/EmailSubscribe";
-import Localization from "@/components/Localization";
-import PaymentMethods from "@/components/PaymentMethods";
-import SocialMedia from "@/components/SocialMedia";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
-import i18n from "@/i18n";
+import EmailSubscribe from '@/components/EmailSubscribe'
+import Localization from '@/components/Localization'
+import PaymentMethods from '@/components/PaymentMethods'
+import SocialMedia from '@/components/SocialMedia'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
+import i18n from '@/i18n'
 
 export default function Footer() {
   return (
@@ -17,14 +17,19 @@ export default function Footer() {
         <PaymentMethods />
         <section className="flex flex-col items-center gap-2">
           <p>
-            &copy; {new Date().getFullYear()} vvenv.{" "}
-            {i18n.t("All rights reserved.")}
+            &copy;
+            {' '}
+            {new Date().getFullYear()}
+            {' '}
+            vvenv.
+            {' '}
+            {i18n.t('All rights reserved.')}
           </p>
           <p className="mt-4 flex justify-center gap-4">
             <ThemeSwitcher />
             <a
               className="block p-0.5 text-default/50 no-underline hover:text-default/75"
-              href={i18n.language === "en" ? "/zh" : "/"}
+              href={i18n.language === 'en' ? '/zh' : '/'}
               title="Toggle language"
             >
               <i className="i-astrim-language block size-5"></i>
@@ -33,6 +38,7 @@ export default function Footer() {
               className="block p-0.5 text-default/50 no-underline hover:text-default/75"
               href="https://github.com/vvenv/astrim"
               target="_blank"
+              rel="noreferrer noopener"
               title="Go to Astrim's GitHub repository"
             >
               <i className="i-astrim-github block size-5"></i>
@@ -41,5 +47,5 @@ export default function Footer() {
         </section>
       </div>
     </footer>
-  );
+  )
 }

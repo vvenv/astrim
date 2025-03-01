@@ -1,8 +1,5 @@
 mutation addCart($cartId: ID!, $merchandiseId: ID!, $quantity: Int = 1) {
-  cartLinesAdd(
-    cartId: $cartId
-    lines: [{ quantity: $quantity, merchandiseId: $merchandiseId }]
-  ) {
+  cartLinesAdd(cartId: $cartId, lines: [{ quantity: $quantity, merchandiseId: $merchandiseId }]) {
     cart {
       id
       createdAt

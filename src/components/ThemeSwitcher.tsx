@@ -1,10 +1,10 @@
 export default function ThemeSwitcher() {
   const handleClick = () => {
     localStorage.setItem(
-      "theme",
-      document.documentElement.classList.toggle("dark") ? "dark" : "light"
-    );
-  };
+      'theme',
+      document.documentElement.classList.toggle('dark') ? 'dark' : 'light',
+    )
+  }
 
   return (
     <button
@@ -17,5 +17,5 @@ export default function ThemeSwitcher() {
       <i className="i-astrim-sun absolute inset-0 size-6 opacity-100 transition-opacity dark:opacity-0"></i>
       <i className="i-astrim-moon absolute inset-0 size-6 opacity-0 transition-opacity dark:opacity-100"></i>
     </button>
-  );
+  )
 }

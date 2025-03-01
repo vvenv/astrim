@@ -1,18 +1,18 @@
-import type { GetCollectionQuery } from "api.generated";
-import ProductImage from "./ProductImage";
-import ProductPrice from "./ProductPrice";
-import i18n from "@/i18n";
-import { Button } from "./form/Button";
+import type { GetCollectionQuery } from 'api.generated'
+import i18n from '@/i18n'
+import { Button } from '@headlessui/react'
+import ProductImage from './ProductImage'
+import ProductPrice from './ProductPrice'
 
-type Props = {
-  handle: string;
-  title: string;
+interface Props {
+  handle: string
+  title: string
   products: NonNullable<
     NonNullable<
-      NonNullable<GetCollectionQuery["collection"]>["products"]
-    >["nodes"]
-  >;
-};
+      NonNullable<GetCollectionQuery['collection']>['products']
+    >['nodes']
+  >
+}
 
 export default function Collection({ handle, title, products }: Props) {
   return (
@@ -44,13 +44,17 @@ export default function Collection({ handle, title, products }: Props) {
               </h3>
               <ProductPrice amount={amount as string} currency={currencyCode} />
             </li>
-          )
+          ),
         )}
       </ul>
 
-      <Button href={`/${i18n.language}/collections/${handle}`}>
-        {i18n.t("View collection")}
+      <Button
+        className="btn-primary"
+        as="a"
+        href={`/${i18n.language}/collections/${handle}`}
+      >
+        {i18n.t('View collection')}
       </Button>
     </section>
-  );
+  )
 }

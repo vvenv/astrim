@@ -1,4 +1,4 @@
-import i18n from "@/i18n";
+import i18n from '@/i18n'
 
 export default function Banner() {
   return (
@@ -7,7 +7,7 @@ export default function Banner() {
       role="region"
       aria-label="Announcement"
     >
-      {i18n.t("Free shipping available on all orders!")}
+      {i18n.t('Free shipping available on all orders!')}
     </div>
-  );
+  )
 }

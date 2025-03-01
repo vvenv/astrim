@@ -1,7 +1,7 @@
-type Props = {
-  title: string;
-  links: { link: string; text: string }[];
-};
+interface Props {
+  title: string
+  links: { link: string, text: string }[]
+}
 
 export default function CollectionMenu({ title, links }: Props) {
   return (
@@ -25,5 +25,5 @@ export default function CollectionMenu({ title, links }: Props) {
         </ul>
       </section>
     </details>
-  );
+  )
 }

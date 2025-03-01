@@ -1,12 +1,12 @@
-import i18n from "@/i18n";
-import { Input } from "../form/Input";
-import { Button } from "../form/Button";
+import i18n from '@/i18n'
+import { Button } from '@headlessui/react'
+import { ComboInput } from '../form/ComboInput'
 
 export default function AccountLogin() {
   return (
     <section className="flex flex-col gap-12">
       <h1 className="text-center text-3xl" tabIndex={-1}>
-        {i18n.t("Create account")}
+        {i18n.t('Create account')}
       </h1>
       <form
         className="flex flex-col gap-6"
@@ -16,38 +16,37 @@ export default function AccountLogin() {
         acceptCharset="UTF-8"
         noValidate
       >
-        <Input
+        <ComboInput
           name="customer[first_name]"
           id="RegisterForm-FirstName"
           autoComplete="given-name"
-          placeholder={i18n.t("First name")}
+          label={i18n.t('First name')}
         />
-        <Input
+        <ComboInput
           type="password"
           name="customer[last_name]"
           id="RegisterForm-LastName"
           autoComplete="family-name"
-          placeholder={i18n.t("Last name")}
+          label={i18n.t('Last name')}
         />
-        <Input
+        <ComboInput
           type="email"
           name="customer[email]"
           id="RegisterForm-Email"
           autoComplete="email"
           autoCorrect="off"
           autoCapitalize="off"
-          placeholder={i18n.t("Email")}
+          label={i18n.t('Email')}
         />
-        <Input
+        <ComboInput
           type="password"
           name="customer[password]"
           id="RegisterForm-Password"
           autoComplete="current-password"
-          placeholder={i18n.t("Password")}
+          label={i18n.t('Password')}
         />
-
-        <Button className="mt-6">{i18n.t("Create")}</Button>
+        <Button className="mt-6 btn-primary">{i18n.t('Create')}</Button>
       </form>
     </section>
-  );
+  )
 }

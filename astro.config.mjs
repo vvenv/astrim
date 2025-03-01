@@ -1,20 +1,20 @@
 // @ts-check
-import { defineConfig } from "astro/config";
-import cloudflare from "@astrojs/cloudflare";
-import mdx from "@astrojs/mdx";
-import node from "@astrojs/node";
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
-import vercel from "@astrojs/vercel";
-import graphql from "@rollup/plugin-graphql";
-import UnoCSS from "unocss/astro";
+import cloudflare from '@astrojs/cloudflare'
+import mdx from '@astrojs/mdx'
+import node from '@astrojs/node'
+import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
+import vercel from '@astrojs/vercel'
+import graphql from '@rollup/plugin-graphql'
+import { defineConfig } from 'astro/config'
+import UnoCSS from 'unocss/astro'
 
 export default defineConfig({
   site: process.env.CLOUDFLARE
-    ? "https://astrim.pages.dev"
+    ? 'https://astrim.pages.dev'
     : process.env.VERCEL
-    ? "https://astrim.vercel.app"
-    : "http://localhost:4321",
+      ? 'https://astrim.vercel.app'
+      : 'http://localhost:4321',
 
   integrations: [
     mdx(),
@@ -25,23 +25,23 @@ export default defineConfig({
     }),
   ],
 
-  output: "server",
+  output: 'server',
 
   adapter: process.env.CLOUDFLARE
     ? cloudflare()
     : process.env.VERCEL
-    ? vercel()
-    : node({
-        mode: "standalone",
-      }),
+      ? vercel()
+      : node({
+          mode: 'standalone',
+        }),
 
   i18n: {
-    locales: ["en", "zh"],
-    defaultLocale: "en",
+    locales: ['en', 'zh'],
+    defaultLocale: 'en',
     routing: {
       prefixDefaultLocale: true,
       redirectToDefaultLocale: false,
-      fallbackType: "redirect",
+      fallbackType: 'redirect',
     },
   },
 
@@ -52,21 +52,21 @@ export default defineConfig({
       // Without this, MessageChannel from node:worker_threads needs to be polyfilled.
       alias: process.env.CLOUDFLARE
         ? {
-            "react-dom/server": "react-dom/server.edge",
+            'react-dom/server': 'react-dom/server.edge',
           }
         : undefined,
     },
     ssr: {
       external: [
-        "node:buffer",
-        "node:fs",
-        "node:path",
-        "node:stream",
-        "node:util",
+        'node:buffer',
+        'node:fs',
+        'node:path',
+        'node:stream',
+        'node:util',
       ],
     },
     build: {
       minify: !process.env.CLOUDFLARE,
     },
   },
-});
+})

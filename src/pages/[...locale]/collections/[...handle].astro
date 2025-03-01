@@ -1,28 +1,29 @@
 ---
-import type { GetCollectionQuery } from "api.generated";
-import request from "graphql-request";
-import ProductImage from "@/components/ProductImage";
-import ProductPrice from "@/components/ProductPrice";
-import getCollection from "@/graphql/collection.gql";
-import getCollectionBefore from "@/graphql/collection-before.gql";
-import Layout from "@/layouts/Default.astro";
-import i18n from "@/i18n";
+import type { GetCollectionQuery } from 'api.generated'
+import ProductImage from '@/components/ProductImage'
+import ProductPrice from '@/components/ProductPrice'
+import getCollectionBefore from '@/graphql/collection-before.gql'
+import getCollection from '@/graphql/collection.gql'
+import i18n from '@/i18n'
+import Layout from '@/layouts/Default.astro'
+import request from 'graphql-request'
 
-export const prerender = false;
+export const prerender = false
 
-const [, handle, before, after = null] =
-  Astro.params.handle?.match(/^(.+?)(?:\/(?:-(.+)|(.+)-))?$/) || [];
+const [, handle, before, after = null]
+  // eslint-disable-next-line regexp/no-super-linear-backtracking
+  = Astro.params.handle?.match(/^(.+?)(?:\/(?:-(.+)|(.+)-))?$/) || []
 
 const { collection } = before
   ? await request<GetCollectionQuery>(
-      "https://mock.shop/api",
+      'https://mock.shop/api',
       getCollectionBefore,
-      { handle, before }
+      { handle, before },
     )
-  : await request<GetCollectionQuery>("https://mock.shop/api", getCollection, {
+  : await request<GetCollectionQuery>('https://mock.shop/api', getCollection, {
       handle,
       after,
-    });
+    })
 
 const {
   title,
@@ -63,32 +64,36 @@ const {
             </h3>
             <ProductPrice amount={amount as string} currency={currencyCode} />
           </li>
-        )
+        ),
       )
     }
   </ul>
   <div class="mt-8 flex items-center justify-between gap-5">
     {
-      hasPreviousPage ? (
+      hasPreviousPage
+? (
         <a
           class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
           href={`/${i18n.language}/collections/${handle}/-${startCursor}`}
         >
-          {i18n.t("Previous")}
+          {i18n.t('Previous')}
         </a>
-      ) : (
+      )
+: (
         <i />
       )
     }
     {
-      hasNextPage ? (
+      hasNextPage
+? (
         <a
           class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
           href={`/${i18n.language}/collections/${handle}/${endCursor}-`}
         >
-          {i18n.t("Next")}
+          {i18n.t('Next')}
         </a>
-      ) : (
+      )
+: (
         <i />
       )
     }

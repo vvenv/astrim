@@ -1,28 +1,28 @@
 ---
-import type { GetProductsQuery } from "api.generated";
-import { request } from "graphql-request";
-import ProductImage from "@/components/ProductImage";
-import ProductPrice from "@/components/ProductPrice";
-import getProducts from "@/graphql/products.gql";
-import i18n from "@/i18n";
-import { Button } from "@/components/form/Button";
+import type { GetProductsQuery } from 'api.generated'
+import ProductImage from '@/components/ProductImage'
+import ProductPrice from '@/components/ProductPrice'
+import getProducts from '@/graphql/products.gql'
+import i18n from '@/i18n'
+import { Button } from '@headlessui/react'
+import { request } from 'graphql-request'
 
 interface Props {
-  showButton?: true;
-  first?: number;
+  showButton?: true
+  first?: number
 }
 
-const { showButton, first } = Astro.props;
+const { showButton, first } = Astro.props
 
 const {
   products: { nodes: products },
-} = await request<GetProductsQuery>("https://mock.shop/api", getProducts, {
+} = await request<GetProductsQuery>('https://mock.shop/api', getProducts, {
   first,
 });
 ---
 
 <section class="my-8 flex flex-col gap-5">
-  <h2 class="text-2xl">{i18n.t("You may also like")}</h2>
+  <h2 class="text-2xl">{i18n.t('You may also like')}</h2>
   <ul class="grid grid-cols-2 gap-6 md:grid-cols-4">
     {
       products.map(
@@ -50,15 +50,19 @@ const {
             </h3>
             <ProductPrice amount={amount as string} currency={currencyCode} />
           </li>
-        )
+        ),
       )
     }
   </ul>
   {
     showButton && (
       <div class="mt-5 flex flex-col items-center">
-        <Button href={`/${i18n.language}/collections/all`}>
-          {i18n.t("View all")}
+        <Button
+          className="btn-primary"
+          as="a"
+          href={`/${i18n.language}/collections/all`}
+        >
+          {i18n.t('View all')}
         </Button>
       </div>
     )

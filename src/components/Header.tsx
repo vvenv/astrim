@@ -1,8 +1,8 @@
-import LoginEntry from "./LoginEntry";
-import HeaderLogo from "./HeaderLogo";
-import MenuDrawer from "./MenuDrawer";
-import Search from "./Search";
-import i18n from "@/i18n";
+import i18n from '@/i18n'
+import HeaderLogo from './HeaderLogo'
+import LoginEntry from './LoginEntry'
+import MenuDrawer from './MenuDrawer'
+import Search from './Search'
 
 export default function Header() {
   return (
@@ -21,5 +21,5 @@ export default function Header() {
         </a>
       </div>
     </header>
-  );
+  )
 }

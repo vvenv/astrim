@@ -1,30 +1,33 @@
 ---
-import Layout from "@/layouts/Default.astro";
-import YouMayAlsoLike from "@/partials/YouMayAlsoLike.astro";
-import i18n from "@/i18n";
-import { Button } from "@/components/form/Button";
+import i18n from '@/i18n'
+import Layout from '@/layouts/Default.astro'
+import YouMayAlsoLike from '@/partials/YouMayAlsoLike.astro'
+import { Button } from '@headlessui/react'
 
 export const prerender = false;
 ---
 
-<Layout title={i18n.t("Your Shopping Cart")}>
+<Layout title={i18n.t('Your Shopping Cart')}>
   <div class="my-12 flex flex-col items-center gap-12">
     <div class="flex flex-col items-center gap-6">
-      <h1 class="text-center text-5xl">{i18n.t("Your cart is empty")}</h1>
-      <Button href={`/${i18n.language}/collections/all`}>
-        {i18n.t("Continue shopping")}
+      <h1 class="text-center text-5xl">{i18n.t('Your cart is empty')}</h1>
+      <Button
+        className="btn-primary"
+        as="a"
+        href={`/${i18n.language}/collections/all`}
+      >
+        {i18n.t('Continue shopping')}
       </Button>
     </div>
     <div class="flex flex-col items-center gap-2">
-      <h2 class="text-2xl">{i18n.t("Have an account?")}</h2>
+      <h2 class="text-2xl">{i18n.t('Have an account?')}</h2>
       <p>
         <a
           class="underline decoration-1 hover:decoration-2"
           href={`/${i18n.language}/account/login`}
+        >{i18n.t('Log in')}</a
         >
-          {i18n.t("Log in")}
-        </a>
-        {i18n.t("to check out faster.")}
+        {i18n.t('to check out faster.')}
       </p>
     </div>
   </div>

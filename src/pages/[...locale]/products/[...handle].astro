@@ -1,28 +1,28 @@
 ---
-import type { GetProductQuery } from "api.generated";
-import request from "graphql-request";
-import AddToCart from "@/components/AddToCart";
-import MediaGallery from "@/components/MediaGallery";
-import VariantSwatch from "@/components/VariantSwatch";
-import VariantPrice from "@/components/VariantPrice";
-import getProduct from "@/graphql/product.gql";
-import Layout from "@/layouts/Default.astro";
-import YouMayAlsoLike from "@/partials/YouMayAlsoLike.astro";
+import type { GetProductQuery } from 'api.generated'
+import AddToCart from '@/components/AddToCart'
+import MediaGallery from '@/components/MediaGallery'
+import VariantPrice from '@/components/VariantPrice'
+import VariantSwatch from '@/components/VariantSwatch'
+import getProduct from '@/graphql/product.gql'
+import Layout from '@/layouts/Default.astro'
+import YouMayAlsoLike from '@/partials/YouMayAlsoLike.astro'
+import request from 'graphql-request'
 
-export const prerender = false;
+export const prerender = false
 
-const { handle } = Astro.params;
+const { handle } = Astro.params
 
 const { product } = await request<GetProductQuery>(
-  "https://mock.shop/api",
+  'https://mock.shop/api',
   getProduct,
-  { handle }
-);
+  { handle },
+)
 
 if (!product) {
   return {
     status: 404,
-  };
+  }
 }
 
 const {
@@ -48,8 +48,8 @@ const {
       <VariantSwatch
         client:load
         options={options}
-        initialSelectedOptions={selectedOrFirstAvailableVariant?.selectedOptions ??
-          []}
+        initialSelectedOptions={selectedOrFirstAvailableVariant?.selectedOptions
+          ?? []}
       />
       <AddToCart client:load variants={variants} />
       <p>{description}</p>

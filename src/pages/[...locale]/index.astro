@@ -1,16 +1,16 @@
 ---
-import type { GetCollectionsQuery } from "api.generated";
-import { request } from "graphql-request";
-import Collection from "@/components/Collection";
-import getCollections from "@/graphql/collections.gql";
-import Layout from "@/layouts/Default.astro";
-import Hero from "@/partials/Hero.astro";
+import type { GetCollectionsQuery } from 'api.generated'
+import Collection from '@/components/Collection'
+import getCollections from '@/graphql/collections.gql'
+import Layout from '@/layouts/Default.astro'
+import Hero from '@/partials/Hero.astro'
+import { request } from 'graphql-request'
 
-export const prerender = false;
+export const prerender = false
 
 const {
   collections: { nodes: collections },
-} = await request<GetCollectionsQuery>("https://mock.shop/api", getCollections);
+} = await request<GetCollectionsQuery>('https://mock.shop/api', getCollections);
 ---
 
 <Layout>

@@ -1,5 +1,5 @@
-import i18n from "@/i18n";
-import { SITE_TITLE } from "../consts";
+import i18n from '@/i18n'
+import { SITE_TITLE } from '../consts'
 
 export default function HeaderLogo() {
   return (
@@ -8,5 +8,5 @@ export default function HeaderLogo() {
         {SITE_TITLE}
       </a>
     </h2>
-  );
+  )
 }

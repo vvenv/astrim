@@ -1,31 +1,31 @@
-import type { GetProductQuery } from "api.generated";
-import { useEffect } from "react";
-import { useStore } from "@nanostores/react";
-import { selectedOptions } from "@/store/selectedOptions";
+import type { GetProductQuery } from 'api.generated'
+import { selectedOptions } from '@/store/selectedOptions'
+import { useStore } from '@nanostores/react'
+import { useEffect } from 'react'
 
-type Props = {
-  options: NonNullable<NonNullable<GetProductQuery>["product"]>["options"];
+interface Props {
+  options: NonNullable<NonNullable<GetProductQuery>['product']>['options']
   initialSelectedOptions: NonNullable<
     NonNullable<
-      NonNullable<GetProductQuery>["product"]
-    >["selectedOrFirstAvailableVariant"]
-  >["selectedOptions"];
-};
+      NonNullable<GetProductQuery>['product']
+    >['selectedOrFirstAvailableVariant']
+  >['selectedOptions']
+}
 
 export default function VariantSwatch({
   options,
   initialSelectedOptions,
 }: Props) {
-  const $selectedOptions = useStore(selectedOptions);
+  const $selectedOptions = useStore(selectedOptions)
 
   useEffect(() => {
     selectedOptions.set(
       initialSelectedOptions.reduce(
         (acc, { name, value }) => ({ ...acc, [name]: value }),
-        {}
-      )
-    );
-  }, [initialSelectedOptions]);
+        {},
+      ),
+    )
+  }, [initialSelectedOptions])
 
   return (
     <section className="grid grid-cols-1 my-8 gap-5" id="options">
@@ -33,7 +33,7 @@ export default function VariantSwatch({
         <fieldset key={name} className="grid grid-cols-1 gap-2">
           <legend className="contents">{name}</legend>
           <ul className="flex flex-wrap gap-2">
-            {optionValues.map((value) => (
+            {optionValues.map(value => (
               <li key={value.name}>
                 <input
                   className="peer sr-only"
@@ -46,7 +46,7 @@ export default function VariantSwatch({
                     selectedOptions.set({
                       ...$selectedOptions,
                       [name]: value.name,
-                    });
+                    })
                   }}
                 />
                 <label
@@ -61,5 +61,5 @@ export default function VariantSwatch({
         </fieldset>
       ))}
     </section>
-  );
+  )
 }

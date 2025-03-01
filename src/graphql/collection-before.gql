@@ -1,8 +1,4 @@
-query getCollectionBefore(
-  $handle: String!
-  $last: Int = 6
-  $before: String = ""
-) {
+query getCollectionBefore($handle: String!, $last: Int = 6, $before: String = "") {
   collection(handle: $handle) {
     title
     description
