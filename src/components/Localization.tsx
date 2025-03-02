@@ -1,4 +1,4 @@
-import i18n from '@/i18n'
+import i18n, { t } from '@/i18n'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import clsx from 'clsx'
 
@@ -76,7 +76,7 @@ export default function Localization({ seamless, country, currency }: Props) {
   return (
     <Menu>
       <section className="flex flex-col items-center gap-2">
-        {seamless ? null : <h2>{i18n.t('Country/region')}</h2>}
+        {seamless ? null : <h2>{t('Country/region')}</h2>}
         <MenuButton
           className={clsx(
             'w-52 flex cursor-pointer items-center py-3 text-default',

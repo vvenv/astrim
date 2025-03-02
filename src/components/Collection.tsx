@@ -1,5 +1,5 @@
 import type { GetCollectionQuery } from 'api.generated'
-import i18n from '@/i18n'
+import i18n, { t } from '@/i18n'
 import { Button } from '@headlessui/react'
 import ProductImage from './ProductImage'
 import ProductPrice from './ProductPrice'
@@ -53,7 +53,7 @@ export default function Collection({ handle, title, products }: Props) {
         as="a"
         href={`/${i18n.language}/collections/${handle}`}
       >
-        {i18n.t('View collection')}
+        {t('View collection')}
       </Button>
     </section>
   )

@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: End to end tests
 on:
   push:
     branches: [main]
@@ -17,11 +17,11 @@ jobs:
         run: npm install -g yarn && yarn
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
-      - name: Run Playwright tests
-        run: yarn playwright test
+      - name: Run end to end tests
+        run: yarn e2e
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
-          name: playwright-report
+          name: e2e-report
           path: playwright-report/
           retention-days: 30

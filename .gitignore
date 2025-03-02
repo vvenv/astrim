@@ -19,7 +19,8 @@ yarn-error.log*
 .DS_Store
 
 # Playwright
-/test-results/
-/playwright-report/
-/blob-report/
 /playwright/.cache/
+/playwright/test-results/
+/playwright-report/
+/test-report/
+/test-results/

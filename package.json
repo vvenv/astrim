@@ -13,8 +13,10 @@
     "codegen": "graphql-codegen --config codegen.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "playwright test",
-    "test:ui": "playwright test --ui",
+    "test": "PLAYWRIGHT_HTML_OUTPUT_DIR=test-report playwright test -c playwright-ct.config.ts",
+    "test:ui": "yarn test --ui",
+    "e2e": "playwright test",
+    "e2e:ui": "yarn e2e --ui",
     "postinstall": "patch-package"
   },
   "dependencies": {
@@ -36,9 +38,10 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.3.0",
-    "@eslint-react/eslint-plugin": "^1.29.0",
+    "@antfu/eslint-config": "^4.4.0",
+    "@eslint-react/eslint-plugin": "^1.30.0",
     "@graphql-codegen/cli": "5.0.5",
+    "@playwright/experimental-ct-react": "^1.50.1",
     "@playwright/test": "^1.50.1",
     "@rollup/plugin-graphql": "^2.0.5",
     "@shopify/graphql-codegen": "^0.1.0",
@@ -55,8 +58,11 @@
     "globals": "^16.0.0",
     "patch-package": "^8.0.0",
     "postinstall-postinstall": "^2.1.0",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "unocss": "^66.0.0",
     "wrangler": "^3.111.0"
+  },
+  "resolutions": {
+    "vite": "^6.2.0"
   }
 }

@@ -68,5 +68,8 @@ export default defineConfig({
     build: {
       minify: !process.env.CLOUDFLARE,
     },
+    optimizeDeps: {
+      exclude: ['chromium-bidi', 'fsevents'],
+    },
   },
 })

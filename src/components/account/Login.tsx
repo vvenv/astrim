@@ -1,4 +1,4 @@
-import i18n from '@/i18n'
+import i18n, { t } from '@/i18n'
 import { Button } from '@headlessui/react'
 import { ComboInput } from '../form/ComboInput'
 
@@ -6,7 +6,7 @@ export default function AccountLogin() {
   return (
     <section className="mx-auto max-w-sm flex flex-col gap-12">
       <h1 className="text-center text-3xl" tabIndex={-1}>
-        {i18n.t('Login')}
+        {t('Login')}
       </h1>
       <form
         className="flex flex-col gap-6"
@@ -23,30 +23,30 @@ export default function AccountLogin() {
           autoComplete="email"
           autoCorrect="off"
           autoCapitalize="off"
-          label={i18n.t('Email')}
+          label={t('Email')}
         />
         <ComboInput
           type="password"
           name="customer[password]"
           id="CustomerPassword"
           autoComplete="current-password"
-          label={i18n.t('Password')}
+          label={t('Password')}
         />
 
         <a
           className="self-start justify-self-start underline underline-offset-3 hover:underline-3"
           href={`/${i18n.language}/account/recover`}
         >
-          {i18n.t('Forgot your password?')}
+          {t('Forgot your password?')}
         </a>
 
-        <Button className="mt-6 btn-primary">{i18n.t('Sign in')}</Button>
+        <Button className="mt-6 btn-primary">{t('Sign in')}</Button>
 
         <a
           className="self-center underline underline-offset-3 hover:underline-3"
           href={`/${i18n.language}/account/register`}
         >
-          {i18n.t('Create account')}
+          {t('Create account')}
         </a>
       </form>
     </section>

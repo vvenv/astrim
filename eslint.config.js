@@ -7,6 +7,7 @@ export default antfu(
     formatters: true,
     react: true,
     unocss: true,
+    isInEditor: false,
   },
   {
     rules: {

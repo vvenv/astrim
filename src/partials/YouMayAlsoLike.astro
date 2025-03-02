@@ -3,7 +3,7 @@ import type { GetProductsQuery } from 'api.generated'
 import ProductImage from '@/components/ProductImage'
 import ProductPrice from '@/components/ProductPrice'
 import getProducts from '@/graphql/products.gql'
-import i18n from '@/i18n'
+import i18n, { t } from '@/i18n'
 import { Button } from '@headlessui/react'
 import { request } from 'graphql-request'
 
@@ -22,7 +22,7 @@ const {
 ---
 
 <section class="my-8 flex flex-col gap-5">
-  <h2 class="text-2xl">{i18n.t('You may also like')}</h2>
+  <h2 class="text-2xl">{t('You may also like')}</h2>
   <ul class="grid grid-cols-2 gap-6 md:grid-cols-4">
     {
       products.map(
@@ -62,7 +62,7 @@ const {
           as="a"
           href={`/${i18n.language}/collections/all`}
         >
-          {i18n.t('View all')}
+          {t('View all')}
         </Button>
       </div>
     )

@@ -1,5 +1,5 @@
 import type { GetProductQuery } from 'api.generated'
-import i18n from '@/i18n'
+import { t } from '@/i18n'
 import { selectedOptions } from '@/store/selectedOptions'
 import { useStore } from '@nanostores/react'
 import { useEffect, useMemo, useState } from 'react'
@@ -41,7 +41,7 @@ export default function AddToCart({ variants }: Props) {
         type="button"
         disabled={disabled}
       >
-        {i18n.t('Add to cart')}
+        {t('Add to cart')}
       </button>
     </section>
   )

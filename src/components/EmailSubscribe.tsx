@@ -1,17 +1,17 @@
-import i18n from '@/i18n'
+import { t } from '@/i18n'
 import { ComboInput } from './form/ComboInput'
 
 export default function EmailSubscribe() {
   return (
     <section className="flex flex-col items-center gap-2">
       <h2 className="text-base md:text-2xl">
-        {i18n.t('Subscribe to our emails')}
+        {t('Subscribe to our emails')}
       </h2>
       <form className="relative">
         <ComboInput
           id="subscribe-email"
           name="email"
-          label={i18n.t('Email')}
+          label={t('Email')}
           type="email"
           size={30}
           aria-required="true"
@@ -23,7 +23,7 @@ export default function EmailSubscribe() {
         <button
           className="absolute right-5 top-3.5"
           type="submit"
-          aria-label={i18n.t('Subscribe')}
+          aria-label={t('Subscribe')}
         >
           <i className="i-astrim-arrow block size-5"></i>
         </button>

@@ -1,5 +1,5 @@
 ---
-import i18n from '@/i18n'
+import i18n, { t } from '@/i18n'
 import { Button } from '@headlessui/react'
 
 export const prerender = false;
@@ -13,24 +13,24 @@ export const prerender = false;
       <img
         class="h-full w-full object-cover"
         src="/images/hero-1.jpg"
-        alt={i18n.t('A woman crouches while holding multiple blue handbags')}
+        alt={t('A woman crouches while holding multiple blue handbags')}
       />
       <img
         class="h-full w-full object-cover"
         src="/images/hero-2.jpg"
-        alt={i18n.t('A woman\'s feet in the air, balancing a blue bag')}
+        alt={t('A woman\'s feet in the air, balancing a blue bag')}
       />
     </div>
   </div>
   <h2 class="z-10 px-6 text-center text-3xl text-white">
-    {i18n.t('Industrial design meets fashion.')}
+    {t('Industrial design meets fashion.')}
   </h2>
-  <p class="z-10 text-white">{i18n.t('Atypical leather goods')}</p>
+  <p class="z-10 text-white">{t('Atypical leather goods')}</p>
   <Button
     className="z-10 mt-3 btn-primary"
     as="a"
     href={`/${i18n.language}/collections/all`}
   >
-    {i18n.t('Shop now')}
+    {t('Shop now')}
   </Button>
 </section>
