@@ -1,11 +1,11 @@
 ---
 import AccountRegister from '@/components/account/Register'
-import i18n from '@/i18n'
+import { t } from '@/i18n'
 import Layout from '@/layouts/Default.astro'
 
 export const prerender = false;
 ---
 
-<Layout title={i18n.t('Create Account')}>
+<Layout title={t('Create Account')}>
   <AccountRegister />
 </Layout>

@@ -3,7 +3,7 @@ import Localization from '@/components/Localization'
 import PaymentMethods from '@/components/PaymentMethods'
 import SocialMedia from '@/components/SocialMedia'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
-import i18n from '@/i18n'
+import i18n, { t } from '@/i18n'
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
             {' '}
             vvenv.
             {' '}
-            {i18n.t('All rights reserved.')}
+            {t('All rights reserved.')}
           </p>
           <p className="mt-4 flex justify-center gap-4">
             <ThemeSwitcher />

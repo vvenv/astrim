@@ -4,7 +4,7 @@ import ProductImage from '@/components/ProductImage'
 import ProductPrice from '@/components/ProductPrice'
 import getCollectionBefore from '@/graphql/collection-before.gql'
 import getCollection from '@/graphql/collection.gql'
-import i18n from '@/i18n'
+import i18n, { t } from '@/i18n'
 import Layout from '@/layouts/Default.astro'
 import request from 'graphql-request'
 
@@ -76,7 +76,7 @@ const {
           class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
           href={`/${i18n.language}/collections/${handle}/-${startCursor}`}
         >
-          {i18n.t('Previous')}
+          {t('Previous')}
         </a>
       )
 : (
@@ -90,7 +90,7 @@ const {
           class="bg-primary px-4 py-2 text-primary-contrast hover:outline-1 hover:outline-primary hover:outline-solid"
           href={`/${i18n.language}/collections/${handle}/${endCursor}-`}
         >
-          {i18n.t('Next')}
+          {t('Next')}
         </a>
       )
 : (

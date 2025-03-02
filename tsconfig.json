@@ -7,6 +7,9 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "types": [
+      "@vitest/browser/providers/playwright"
+    ],
     "strictNullChecks": true
   },
   "include": [
