@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/experimental-ct-react'
-import i18n, { t } from './i18n'
+import { i18n, t } from './i18n'
 
 test('struct', () => {
   expect(i18n.default).toBe('en')
