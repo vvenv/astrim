@@ -1,7 +1,7 @@
 import { t } from '@/i18n'
 import { ComboInput } from './form/ComboInput'
 
-export default function EmailSubscribe() {
+export function EmailSubscribe() {
   return (
     <section className="flex flex-col items-center gap-2">
       <h2 className="text-base md:text-2xl">

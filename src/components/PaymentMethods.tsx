@@ -1,4 +1,4 @@
-export default function PaymentMethods() {
+export function PaymentMethods() {
   return (
     <ul className="flex gap-2" aria-label="Payment Methods">
       <li>

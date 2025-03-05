@@ -1,8 +1,8 @@
-import i18n, { t } from '@/i18n'
+import { i18n, t } from '@/i18n'
 import { Button } from '@headlessui/react'
 import { ComboInput } from '../form/ComboInput'
 
-export default function AccountLogin() {
+export function AccountLogin() {
   return (
     <section className="mx-auto max-w-sm flex flex-col gap-12">
       <h1 className="text-center text-3xl" tabIndex={-1}>

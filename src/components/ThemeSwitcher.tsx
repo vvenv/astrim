@@ -1,4 +1,4 @@
-export default function ThemeSwitcher() {
+export function ThemeSwitcher() {
   const handleClick = () => {
     localStorage.setItem(
       'theme',

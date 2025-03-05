@@ -7,7 +7,7 @@ import {
 } from '@headlessui/react'
 import { useState } from 'react'
 
-export default function Search() {
+export function Search() {
   const [isOpen, setIsOpen] = useState(false)
 
   const open = () => setIsOpen(true)

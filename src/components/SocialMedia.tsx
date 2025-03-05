@@ -32,7 +32,7 @@ const socialMedia = [
   },
 ]
 
-export default function SocialMedia({ className }: Props) {
+export function SocialMedia({ className }: Props) {
   return (
     <ul className={clsx([className, 'flex gap-1 items-center'])}>
       {socialMedia.map(({ link, iconClass, label }) => (

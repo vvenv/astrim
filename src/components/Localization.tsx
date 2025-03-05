@@ -1,4 +1,4 @@
-import i18n, { t } from '@/i18n'
+import { i18n, t } from '@/i18n'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import clsx from 'clsx'
 
@@ -68,7 +68,7 @@ const countries = [
   },
 ]
 
-export default function Localization({ seamless, country, currency }: Props) {
+export function Localization({ seamless, country, currency }: Props) {
   const current
     = countries.find(c => c.country === country && c.currency === currency)
       ?? countries[0]

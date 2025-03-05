@@ -1,11 +1,11 @@
 import { Button, Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { useState } from 'react'
-import CollectionMenu from './CollectionMenu'
-import Localization from './Localization'
-import LoginEntry from './LoginEntry'
-import SocialMedia from './SocialMedia'
+import { CollectionMenu } from './CollectionMenu'
+import { Localization } from './Localization'
+import { LoginEntry } from './LoginEntry'
+import { SocialMedia } from './SocialMedia'
 
-export default function MenuDrawer() {
+export function MenuDrawer() {
   const [isOpen, setIsOpen] = useState(false)
 
   const open = () => setIsOpen(true)
@@ -90,7 +90,7 @@ export default function MenuDrawer() {
               </ul>
             </nav>
             <div className="flex flex-col items-start gap-4 bg-invert/3 p-8">
-              <LoginEntry className="md:hidden" />
+              <LoginEntry />
               <Localization seamless />
               <SocialMedia />
             </div>

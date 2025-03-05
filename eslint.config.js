@@ -10,6 +10,9 @@ export default antfu(
     isInEditor: false,
   },
   {
+    ignores: ['api.generated.d.ts'],
+  },
+  {
     rules: {
       'antfu/no-top-level-await': 'off',
       'node/prefer-global/process': ['error', 'always'],

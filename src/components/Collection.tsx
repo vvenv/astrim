@@ -1,8 +1,8 @@
 import type { GetCollectionQuery } from 'api.generated'
-import i18n, { t } from '@/i18n'
+import { i18n, t } from '@/i18n'
 import { Button } from '@headlessui/react'
-import ProductImage from './ProductImage'
-import ProductPrice from './ProductPrice'
+import { ProductImage } from './ProductImage'
+import { ProductPrice } from './ProductPrice'
 
 interface Props {
   handle: string
@@ -14,7 +14,7 @@ interface Props {
   >
 }
 
-export default function Collection({ handle, title, products }: Props) {
+export function Collection({ handle, title, products }: Props) {
   return (
     <section className="flex flex-col items-start gap-5">
       <h2 className="text-2xl">{title}</h2>

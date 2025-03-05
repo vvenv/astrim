@@ -1,11 +1,11 @@
-import EmailSubscribe from '@/components/EmailSubscribe'
-import Localization from '@/components/Localization'
-import PaymentMethods from '@/components/PaymentMethods'
-import SocialMedia from '@/components/SocialMedia'
-import ThemeSwitcher from '@/components/ThemeSwitcher'
-import i18n, { t } from '@/i18n'
+import { EmailSubscribe } from '@/components/EmailSubscribe'
+import { Localization } from '@/components/Localization'
+import { PaymentMethods } from '@/components/PaymentMethods'
+import { SocialMedia } from '@/components/SocialMedia'
+import { ThemeSwitcher } from '@/components/ThemeSwitcher'
+import { i18n, t } from '@/i18n'
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-default px-4 pb-24 pt-8">
       <div className="mt-8 flex flex-col items-center gap-8 border-t border-default/8 pt-8">

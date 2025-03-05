@@ -1,5 +1,5 @@
 import type { GetProductQuery } from 'api.generated'
-import ProductImage from '@/components/ProductImage'
+import { ProductImage } from '@/components/ProductImage'
 import { selectedOptions } from '@/store/selectedOptions'
 import { useStore } from '@nanostores/react'
 import { useMemo } from 'react'
@@ -13,7 +13,7 @@ interface Props {
   >['nodes']
 }
 
-export default function MediaGallery({ featuredImage, variants }: Props) {
+export function MediaGallery({ featuredImage, variants }: Props) {
   const $selectedOptions = useStore(selectedOptions)
 
   const selectedVariant = useMemo(() => {

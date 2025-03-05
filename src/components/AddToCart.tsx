@@ -1,6 +1,7 @@
 import type { GetProductQuery } from 'api.generated'
 import { t } from '@/i18n'
 import { selectedOptions } from '@/store/selectedOptions'
+import { Button, Field, Input } from '@headlessui/react'
 import { useStore } from '@nanostores/react'
 import { useEffect, useMemo, useState } from 'react'
 
@@ -10,10 +11,11 @@ interface Props {
   >['nodes']
 }
 
-export default function AddToCart({ variants }: Props) {
+export function AddToCart({ variants }: Props) {
   const $selectedOptions = useStore(selectedOptions)
 
   const [disabled, setDisabled] = useState(true)
+  const [quantity, setQuantity] = useState(1)
 
   const selectedVariant = useMemo(() => {
     return variants.find(({ selectedOptions }) =>
@@ -29,20 +31,37 @@ export default function AddToCart({ variants }: Props) {
 
   return (
     <section className="my-8 flex flex-col items-start gap-5">
-      <input
-        className="border border-primary/10 bg-transparent px-4 py-3"
-        type="number"
-        pattern="[0-9]*"
-        defaultValue="1"
-        disabled={disabled}
-      />
-      <button
-        className="block w-full cursor-pointer bg-primary px-8 py-3 text-primary-contrast disabled:cursor-not-allowed disabled:bg-primary/50 disabled:text-primary-contrast/50 hover:outline-1 hover:outline-primary hover:outline-solid disabled:outline-none"
-        type="button"
-        disabled={disabled}
+      <Field className="relative" disabled={disabled}>
+        <Button
+          className="absolute left-0 h-full px-5"
+          disabled={quantity <= 1}
+          onClick={() => {
+            setQuantity(quantity - 1)
+          }}
+        >
+          <i className="i-astrim-minus block size-2"></i>
+        </Button>
+        <Input
+          className="border border-primary/10 bg-transparent px-4 py-3 text-center"
+          type="number"
+          pattern="[0-9]*"
+          value={quantity}
+          min={1}
+        />
+        <Button
+          className="absolute right-0 h-full px-5"
+          onClick={() => {
+            setQuantity(quantity + 1)
+          }}
+        >
+          <i className="i-astrim-plus block size-2"></i>
+        </Button>
+      </Field>
+      <Button
+        className="w-full btn-primary"
       >
         {t('Add to cart')}
-      </button>
+      </Button>
     </section>
   )
 }

@@ -1,10 +1,10 @@
-import i18n from '@/i18n'
-import HeaderLogo from './HeaderLogo'
-import LoginEntry from './LoginEntry'
-import MenuDrawer from './MenuDrawer'
-import Search from './Search'
+import { i18n } from '@/i18n'
+import { HeaderLogo } from './HeaderLogo'
+import { LoginEntry } from './LoginEntry'
+import { MenuDrawer } from './MenuDrawer'
+import { Search } from './Search'
 
-export default function Header() {
+export function Header() {
   return (
     <header className="sticky left-0 right-0 top-0 z-20 grid grid-cols-[100px_1fr_100px] items-center border-b border-default/8 bg-default px-6 py-2 md:grid-cols-[160px_1fr_160px]">
       <MenuDrawer />

@@ -1,5 +1,5 @@
 import { defineMiddleware } from 'astro:middleware'
-import i18n from './i18n'
+import { i18n } from './i18n'
 
 export const onRequest = defineMiddleware(async (ctx, next) => {
   const segments = ctx.url.pathname.split('/')

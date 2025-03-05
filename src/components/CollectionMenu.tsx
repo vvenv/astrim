@@ -3,7 +3,7 @@ interface Props {
   links: { link: string, text: string }[]
 }
 
-export default function CollectionMenu({ title, links }: Props) {
+export function CollectionMenu({ title, links }: Props) {
   return (
     <details className="group/collection">
       <summary

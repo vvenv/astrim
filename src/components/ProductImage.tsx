@@ -5,7 +5,7 @@ interface Props {
 
 const sizes = [165, 360, 533, 720, 940, 1066]
 
-export default function ProductImage({ src, alt }: Props) {
+export function ProductImage({ src, alt }: Props) {
   const resizes = sizes
     .map((size) => {
       return `${src}&width=${size} ${size}w`

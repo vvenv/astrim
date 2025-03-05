@@ -1,4 +1,4 @@
-import i18n from '@/i18n'
+import { i18n } from '@/i18n'
 import clsx from 'clsx'
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   iconOnly?: boolean
 }
 
-export default function LoginEntry({ desktopOnly, iconOnly }: Props) {
+export function LoginEntry({ desktopOnly, iconOnly }: Props) {
   return (
     <a
       className={clsx([

@@ -34,5 +34,5 @@ if (typeof window !== 'undefined') {
   }
 }
 
-export default i18n
-export const t = i18n.t
+const t = i18n.t
+export { i18n, t }

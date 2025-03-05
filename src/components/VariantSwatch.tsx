@@ -12,7 +12,7 @@ interface Props {
   >['selectedOptions']
 }
 
-export default function VariantSwatch({
+export function VariantSwatch({
   options,
   initialSelectedOptions,
 }: Props) {

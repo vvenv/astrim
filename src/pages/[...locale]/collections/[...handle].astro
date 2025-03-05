@@ -1,10 +1,10 @@
 ---
 import type { GetCollectionQuery } from 'api.generated'
-import ProductImage from '@/components/ProductImage'
-import ProductPrice from '@/components/ProductPrice'
+import { ProductImage } from '@/components/ProductImage'
+import { ProductPrice } from '@/components/ProductPrice'
 import getCollectionBefore from '@/graphql/collection-before.gql'
 import getCollection from '@/graphql/collection.gql'
-import i18n, { t } from '@/i18n'
+import { i18n, t } from '@/i18n'
 import Layout from '@/layouts/Default.astro'
 import request from 'graphql-request'
 
