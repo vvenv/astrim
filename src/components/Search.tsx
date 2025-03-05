@@ -20,7 +20,7 @@ export function Search() {
         aria-label="Toggle search"
         onClick={open}
       >
-        <i className="i-astrim:search block size-5 cursor-pointer transition-transform hover:scale-110"></i>
+        <i className="i-astrim-search block size-5 cursor-pointer transition-transform hover:scale-110"></i>
       </Button>
       <Dialog
         className="relative z-30"
@@ -62,7 +62,7 @@ export function Search() {
                 type="submit"
                 aria-label="Search"
               >
-                <i className="i-astrim:search block size-5"></i>
+                <i className="i-astrim-search block size-5"></i>
               </Button>
             </div>
             <Button
@@ -72,7 +72,7 @@ export function Search() {
               aria-label="Close search"
               onClick={close}
             >
-              <i className="i-astrim:close block size-5"></i>
+              <i className="i-astrim-close block size-5"></i>
             </Button>
           </DialogPanel>
         </form>

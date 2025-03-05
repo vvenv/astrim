@@ -92,7 +92,7 @@ export function Localization({ seamless, country, currency }: Props) {
             <span>{current.currency}</span>
             <span>{current.sign}</span>
           </span>
-          <i className="i-astrim:caret block size-3"></i>
+          <i className="i-astrim-caret block size-3"></i>
         </MenuButton>
         <MenuItems className="h-52 w-52 overflow-auto border border-default/50 bg-default -translate-y-1" anchor="top start" transition>
           {countries.map(({ flag, country, currency, sign }) => (
@@ -104,7 +104,7 @@ export function Localization({ seamless, country, currency }: Props) {
                 <span className="flex items-center gap-2">
                   <i
                     className={clsx([
-                      'block i-astrim:check size-4',
+                      'block i-astrim-check size-4',
                       current.country === country ? 'opacity-100' : 'opacity-0',
                     ])}
                   />

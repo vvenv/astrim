@@ -7,27 +7,27 @@ interface Props {
 const socialMedia = [
   {
     link: 'https://x.com/shopify',
-    iconClass: 'i-astrim:twitter',
+    iconClass: 'i-astrim-twitter',
     label: 'Twitter',
   },
   {
     link: 'https://facebook.com/shopify',
-    iconClass: 'i-astrim:facebook',
+    iconClass: 'i-astrim-facebook',
     label: 'Facebook',
   },
   {
     link: 'https://instagram.com/shopify',
-    iconClass: 'i-astrim:instagram',
+    iconClass: 'i-astrim-instagram',
     label: 'Instagram',
   },
   {
     link: 'https://tiktok.com/@shopify',
-    iconClass: 'i-astrim:tiktok',
+    iconClass: 'i-astrim-tiktok',
     label: 'TikTok',
   },
   {
     link: 'https://www.youtube.com/shopify',
-    iconClass: 'i-astrim:youtube',
+    iconClass: 'i-astrim-youtube',
     label: 'YouTube',
   },
 ]

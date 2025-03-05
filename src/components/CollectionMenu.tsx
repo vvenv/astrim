@@ -1,3 +1,6 @@
+import { t } from '@/i18n'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
+
 interface Props {
   title: string
   links: { link: string, text: string }[]
@@ -5,25 +8,22 @@ interface Props {
 
 export function CollectionMenu({ title, links }: Props) {
   return (
-    <details className="group/collection">
-      <summary
-        className="flex items-center justify-between gap-2 px-8 py-3 group-open/collection:flex-row-reverse group-open/collection:justify-end hover:bg-invert/4"
-        role="button"
-      >
-        {title}
-        <i className="i-astrim:arrow block transition-transform group-open/collection:rotate-180"></i>
-      </summary>
-      <section>
-        <ul className="ml-6" tabIndex={-1}>
+    <Popover>
+      <PopoverButton className="group flex items-center gap-2 px-4 py-2 hover:bg-invert/4">
+        {t(title)}
+        <i className="i-astrim-caret block size-3 transition-transform group-data-[open]:rotate-180"></i>
+      </PopoverButton>
+      <PopoverPanel className="z-20 origin-top border border-default/8 bg-default transition ease-out data-[closed]:scale-95 data-[closed]:opacity-0" anchor="bottom start" transition>
+        <ul className="flex flex-col" tabIndex={-1}>
           {links.map(({ link, text }) => (
             <li key={link}>
-              <a className="block px-8 py-3 hover:bg-invert/4" href={link}>
-                {text}
+              <a className="block px-4 py-3 hover:bg-invert/4" href={link}>
+                {t(text)}
               </a>
             </li>
           ))}
         </ul>
-      </section>
-    </details>
+      </PopoverPanel>
+    </Popover>
   )
 }
