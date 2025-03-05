@@ -3,12 +3,27 @@ const i18n: {
   language: string
   locales: string[]
   translations: Record<string, string>
+  d: (url: string) => Promise<string | void>
   t: (key: string, params?: Record<string, string | number | boolean>) => string
 } = {
   default: 'en',
   language: 'en',
   locales: ['en', 'zh'],
   translations: {},
+  d: async (url: string) => {
+    const segments = url.split('/')
+    const detected = i18n.locales.includes(segments[1]) ? segments[1] : i18n.default
+    if (detected !== segments[1]) {
+      segments[1] = detected
+      return `${segments.join('/')}${location.search}${location.hash}`
+    }
+    else {
+      i18n.language = detected
+      i18n.translations = await import(`./locales/${detected}.json`)
+        .then(module => module.default)
+        .catch(() => ({}))
+    }
+  },
   t: (key: string, params?: Record<string, string | number | boolean>) => {
     const value: string = Object.hasOwn(i18n.translations, key)
       ? i18n.translations[key]
@@ -22,17 +37,10 @@ const i18n: {
   },
 }
 
-if (typeof window !== 'undefined') {
-  const segments = location.pathname.split('/')
-  i18n.language = i18n.locales.includes(segments[1]) ? segments[1] : i18n.default
-  i18n.translations = await import(`./locales/${i18n.language}.json`)
-    .then(module => module.default)
-    .catch(() => ({}))
-  if (i18n.language !== segments[1]) {
-    segments[1] = i18n.language
-    location.replace(`${segments.join('/')}${location.search}${location.hash}`)
-  }
-}
-
+const d = i18n.d
 const t = i18n.t
-export { i18n, t }
+export { d, i18n, t }
+
+if (typeof window !== 'undefined') {
+  await d(location.pathname)
+}
