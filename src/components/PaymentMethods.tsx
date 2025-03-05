@@ -1,6 +1,6 @@
 export function PaymentMethods() {
   return (
-    <ul className="flex gap-2" aria-label="Payment Methods">
+    <ul className="flex flex-wrap justify-center gap-2" aria-label="Payment Methods">
       <li>
         <svg
           className="h-6 w-10"
