@@ -15,7 +15,7 @@ const i18n: {
     const detected = i18n.locales.includes(segments[1]) ? segments[1] : i18n.default
     if (detected !== segments[1]) {
       segments[1] = detected
-      return `${segments.join('/')}${location.search}${location.hash}`
+      return segments.join('/')
     }
     else {
       i18n.language = detected
@@ -42,5 +42,5 @@ const t = i18n.t
 export { d, i18n, t }
 
 if (typeof window !== 'undefined') {
-  await d(location.pathname)
+  await d(location.href)
 }
