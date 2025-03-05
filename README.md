@@ -1,6 +1,6 @@
 # ASTRIM
 
-A e-commerce theme built with Astro, UnoCSS, React, and Mock.Shop.
+A e-commerce theme built with Astro, React, HeadlessUI, UnoCSS, and Mock.Shop.
 
 [![CodeQL](https://github.com/vvenv/astrim/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/vvenv/astrim/actions/workflows/github-code-scanning/codeql)
 [![Dependabot Updates](https://github.com/vvenv/astrim/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/vvenv/astrim/actions/workflows/dependabot/dependabot-updates)
