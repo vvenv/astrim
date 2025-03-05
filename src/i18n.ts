@@ -42,5 +42,5 @@ const t = i18n.t
 export { d, i18n, t }
 
 if (typeof window !== 'undefined') {
-  await d(location.href)
+  await d(location.href.slice(location.origin.length))
 }
