@@ -20,7 +20,7 @@ const {
   <div class="flex flex-col gap-12">
     {
       collections.map(({ handle, title, products: { nodes: products } }) => (
-        <Collection handle={handle} title={title} products={products} />
+        <Collection client:load handle={handle} title={title} products={products} />
       ))
     }
   </div>

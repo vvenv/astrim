@@ -18,9 +18,9 @@ export function HeaderMenu() {
         <li>
           <a
             className="block px-4 py-2 hover:bg-invert/4"
-            href="/pages/lookbook-summer"
+            href="/pages/swiper"
           >
-            Lookbook
+            Swiper
           </a>
         </li>
       </ul>

@@ -61,9 +61,9 @@ export function HeaderDrawer() {
                 <li>
                   <a
                     className="block px-8 py-3 hover:bg-invert/4"
-                    href="/pages/lookbook-summer"
+                    href="/pages/swiper"
                   >
-                    Lookbook
+                    Swiper
                   </a>
                 </li>
               </ul>
