@@ -2875,10 +2875,15 @@
     "@unocss/core" "66.1.0-beta.3"
     "@unocss/preset-wind3" "66.1.0-beta.3"
 
-"@unocss/reset@66.1.0-beta.3", "@unocss/reset@^66.1.0-beta.3":
+"@unocss/reset@66.1.0-beta.3":
   version "66.1.0-beta.3"
   resolved "https://registry.yarnpkg.com/@unocss/reset/-/reset-66.1.0-beta.3.tgz#43ecceca88a5f561f2c7d9bc4838fb6317183494"
   integrity sha512-QV8ZWhj/4cuTGtxiqDmSZDc339cb9IJT40o9FGmOMRH20kJNlDX0OIsevOX/LsTiGgp6KTM5ORVr6QUMmiRv0w==
+
+"@unocss/reset@^66.1.0-beta.6":
+  version "66.1.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@unocss/reset/-/reset-66.1.0-beta.6.tgz#fc902207214acf076022861875a2443722c1bac1"
+  integrity sha512-HIB+JT1/1LbDChcbYmWAmSNMHMBYMcgubc5W0nIEZbfT4JGF/ZsbFeAhpbau/k/Ny5w5XlBD24CESkYewldgyw==
 
 "@unocss/rule-utils@66.1.0-beta.3":
   version "66.1.0-beta.3"
