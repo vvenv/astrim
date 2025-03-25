@@ -1,5 +1,4 @@
 import { i18n, t } from '@/i18n'
-import { Button } from '@headlessui/react'
 import { ComboInput } from '../form/ComboInput'
 
 export function AccountRegister() {
@@ -11,8 +10,8 @@ export function AccountRegister() {
       <form
         className="flex flex-col gap-6"
         method="post"
-        action={`/${i18n.language}/account/login`}
-        id="customer_login"
+        action={`/${i18n.language}/account/register`}
+        id="customer_register"
         acceptCharset="UTF-8"
         noValidate
       >
@@ -45,7 +44,7 @@ export function AccountRegister() {
           autoComplete="current-password"
           label={t('Password')}
         />
-        <Button className="mt-6 btn-primary">{t('Create')}</Button>
+        <button className="mt-6 btn-primary" type="submit">{t('Create')}</button>
       </form>
     </section>
   )

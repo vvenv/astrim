@@ -4,7 +4,6 @@ import { ProductImage } from '@/components/ProductImage'
 import { ProductPrice } from '@/components/ProductPrice'
 import getProducts from '@/graphql/products.gql'
 import { i18n, t } from '@/i18n'
-import { Button } from '@headlessui/react'
 import { request } from 'graphql-request'
 
 interface Props {
@@ -57,13 +56,12 @@ const {
   {
     showButton && (
       <div class="mt-5 flex flex-col items-center">
-        <Button
-          className="btn-primary"
-          as="a"
+        <a
+          class="btn-primary"
           href={`/${i18n.language}/collections/all`}
         >
           {t('View all')}
-        </Button>
+        </a>
       </div>
     )
   }

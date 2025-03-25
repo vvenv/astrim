@@ -1,7 +1,7 @@
 import type { GetProductQuery } from 'api.generated'
 import { t } from '@/i18n'
 import { selectedOptions } from '@/store/selectedOptions'
-import { Button, Field, Input } from '@headlessui/react'
+import { Field, Input } from '@base-ui-components/react'
 import { useStore } from '@nanostores/react'
 import { useEffect, useMemo, useState } from 'react'
 
@@ -31,16 +31,18 @@ export function AddToCart({ variants }: Props) {
 
   return (
     <section className="my-8 flex flex-col items-start gap-5">
-      <Field className="relative" disabled={disabled}>
-        <Button
+      <Field.Root className="relative" disabled={disabled}>
+        <button
           className="absolute left-0 h-full px-5"
+          type="button"
           disabled={quantity <= 1}
           onClick={() => {
             setQuantity(quantity - 1)
           }}
+          aria-label="Decrease quantity"
         >
           <i className="i-astrim-minus block size-2"></i>
-        </Button>
+        </button>
         <Input
           className="border border-primary/10 bg-transparent px-4 py-3 text-center"
           type="number"
@@ -48,20 +50,23 @@ export function AddToCart({ variants }: Props) {
           value={quantity}
           min={1}
         />
-        <Button
+        <button
           className="absolute right-0 h-full px-5"
+          type="button"
           onClick={() => {
             setQuantity(quantity + 1)
           }}
+          aria-label="Increase quantity"
         >
           <i className="i-astrim-plus block size-2"></i>
-        </Button>
-      </Field>
-      <Button
+        </button>
+      </Field.Root>
+      <button
         className="w-full btn-primary"
+        type="button"
       >
         {t('Add to cart')}
-      </Button>
+      </button>
     </section>
   )
 }

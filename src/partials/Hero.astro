@@ -1,6 +1,5 @@
 ---
 import { i18n, t } from '@/i18n'
-import { Button } from '@headlessui/react'
 
 export const prerender = false;
 ---
@@ -26,11 +25,10 @@ export const prerender = false;
     {t('Industrial design meets fashion.')}
   </h2>
   <p class="z-10 text-white">{t('Atypical leather goods')}</p>
-  <Button
-    className="z-10 mt-3 btn-primary"
-    as="a"
+  <a
+    class="z-10 mt-3 btn-primary"
     href={`/${i18n.language}/collections/all`}
   >
     {t('Shop now')}
-  </Button>
+  </a>
 </section>

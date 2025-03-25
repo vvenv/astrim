@@ -1,6 +1,5 @@
 import type { GetCollectionQuery } from 'api.generated'
 import { i18n, t } from '@/i18n'
-import { Button } from '@headlessui/react'
 import { A11y, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ProductImage } from './ProductImage'
@@ -84,14 +83,13 @@ export function Collection({ handle, title, products }: Props) {
           <i className="i-astrim-caret block size-10 text-invert -rotate-90" />
         </div>
       </Swiper>
-      <Button
+      <a
         className="group inline-flex items-center gap-2 btn-primary"
-        as="a"
         href={`/${i18n.language}/collections/${handle}`}
       >
         {t('View collection')}
         <i className="i-astrim-caret size-3 transition-transform group-hover:translate-x-2 -rotate-90" />
-      </Button>
+      </a>
     </section>
   )
 }

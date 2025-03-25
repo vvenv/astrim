@@ -1,5 +1,4 @@
 import { i18n, t } from '@/i18n'
-import { Button } from '@headlessui/react'
 import { ComboInput } from '../form/ComboInput'
 
 export function AccountLogin() {
@@ -40,7 +39,7 @@ export function AccountLogin() {
           {t('Forgot your password?')}
         </a>
 
-        <Button className="mt-6 btn-primary">{t('Sign in')}</Button>
+        <button className="mt-6 btn-primary" type="submit">{t('Sign in')}</button>
 
         <a
           className="self-center underline underline-offset-3 hover:underline-3"

@@ -63,6 +63,14 @@ export default defineConfig({
       ([, c]) =>
         `bg-${c} px-8 py-3 text-${c}-contrast hover:outline-1 hover:outline-${c} hover:outline-solid`,
     ],
+    [
+      /^closed:(.*)$/,
+      ([, c]) => `data-[ending-style]:${c} data-[starting-style]:${c}`,
+      {
+        layer: 'components',
+        sort: 3,
+      },
+    ],
   ],
   transformers: [transformerDirectives()],
   theme: {

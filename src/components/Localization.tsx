@@ -1,5 +1,5 @@
 import { i18n, t } from '@/i18n'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Menu } from '@base-ui-components/react'
 import clsx from 'clsx'
 
 interface Props {
@@ -74,10 +74,10 @@ export function Localization({ seamless, country, currency }: Props) {
       ?? countries[0]
 
   return (
-    <Menu>
-      <section className="flex flex-col items-center gap-2">
-        {seamless ? null : <h2>{t('Country/region')}</h2>}
-        <MenuButton
+    <section className="flex flex-col items-center gap-2">
+      {seamless ? null : <h2>{t('Country/region')}</h2>}
+      <Menu.Root modal={false}>
+        <Menu.Trigger
           className={clsx(
             'w-52 flex cursor-pointer items-center py-3 text-default',
             seamless ? 'gap-4' : 'gap-8 px-5 border border-default/50',
@@ -93,33 +93,40 @@ export function Localization({ seamless, country, currency }: Props) {
             <span>{current.sign}</span>
           </span>
           <i className="i-astrim-caret block size-3"></i>
-        </MenuButton>
-        <MenuItems className="h-52 w-52 overflow-auto border border-default/50 bg-default -translate-y-1" anchor="top start" transition>
-          {countries.map(({ flag, country, currency, sign }) => (
-            <MenuItem key={country}>
-              <a
-                className="flex items-center justify-between gap-1 border-b border-default/50 py-2 pl-2 pr-8 transition-colors last:border-b-none hover:bg-invert/4"
-                href={`/${i18n.language}?=country=${country}`}
-              >
-                <span className="flex items-center gap-2">
-                  <i
-                    className={clsx([
-                      'block i-astrim-check size-4',
-                      current.country === country ? 'opacity-100' : 'opacity-0',
-                    ])}
-                  />
-                  <span>{flag}</span>
-                  <span>{country}</span>
-                </span>
-                <span className="flex items-center gap-2">
-                  <span>{currency}</span>
-                  <span>{sign}</span>
-                </span>
-              </a>
-            </MenuItem>
-          ))}
-        </MenuItems>
-      </section>
-    </Menu>
+        </Menu.Trigger>
+        <Menu.Portal>
+          <Menu.Positioner align="start">
+            <Menu.Popup className="h-56 w-52 overflow-auto border border-default/50 bg-default">
+              {countries.map(({ flag, country, currency, sign }) => (
+                <Menu.Item
+                  key={country}
+                  render={(
+                    <a
+                      className="flex items-center justify-between gap-1 border-b border-default/50 py-2 pl-2 pr-8 transition-colors last:border-b-none hover:bg-invert/4"
+                      href={`/${i18n.language}?=country=${country}`}
+                    >
+                      <span className="flex items-center gap-2">
+                        <i
+                          className={clsx([
+                            'block i-astrim-check size-4',
+                            current.country === country ? 'opacity-100' : 'opacity-0',
+                          ])}
+                        />
+                        <span>{flag}</span>
+                        <span>{country}</span>
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <span>{currency}</span>
+                        <span>{sign}</span>
+                      </span>
+                    </a>
+                  )}
+                />
+              ))}
+            </Menu.Popup>
+          </Menu.Positioner>
+        </Menu.Portal>
+      </Menu.Root>
+    </section>
   )
 }

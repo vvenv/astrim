@@ -1,5 +1,4 @@
 import { i18n, t } from '@/i18n'
-import { Button } from '@headlessui/react'
 import { ComboInput } from '../form/ComboInput'
 
 export function AccountRecover() {
@@ -26,7 +25,7 @@ export function AccountRecover() {
           autoCapitalize="off"
           label={t('Email')}
         />
-        <Button className="mt-6 btn-primary">{t('Submit')}</Button>
+        <button className="mt-6 btn-primary" type="button">{t('Submit')}</button>
         <a
           className="self-center underline underline-offset-3 hover:underline-3"
           href={`/${i18n.language}/account/login`}
