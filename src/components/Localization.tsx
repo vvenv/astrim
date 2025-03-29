@@ -1,4 +1,4 @@
-import { i18n, t } from '@/i18n'
+import { i18n, t } from '@/services/i18n'
 import { Menu } from '@base-ui-components/react'
 import clsx from 'clsx'
 

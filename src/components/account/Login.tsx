@@ -1,4 +1,4 @@
-import { i18n, t } from '@/i18n'
+import { i18n, t } from '@/services/i18n'
 import { ComboInput } from '../form/ComboInput'
 
 export function AccountLogin() {

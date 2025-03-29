@@ -1,4 +1,4 @@
-import { t } from '@/i18n'
+import { t } from '@/services/i18n'
 import { Popover } from '@base-ui-components/react'
 
 interface Props {

@@ -3,7 +3,7 @@ import { Localization } from '@/components/Localization'
 import { PaymentMethods } from '@/components/PaymentMethods'
 import { SocialMedia } from '@/components/SocialMedia'
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
-import { i18n, t } from '@/i18n'
+import { i18n, t } from '@/services/i18n'
 
 export function Footer() {
   return (

@@ -3,14 +3,14 @@ const i18n: {
   language: string
   locales: string[]
   translations: Record<string, string>
-  d: (url: string) => Promise<string | void>
+  detect: (url: string) => Promise<string | void>
   t: (key: string, params?: Record<string, string | number | boolean>) => string
 } = {
   default: 'en',
   language: 'en',
   locales: ['en', 'zh'],
   translations: {},
-  d: async (url: string) => {
+  detect: async (url: string) => {
     const segments = url.split('/')
     const detected = i18n.locales.includes(segments[1]) ? segments[1] : i18n.default
     if (detected !== segments[1]) {
@@ -19,7 +19,7 @@ const i18n: {
     }
     else {
       i18n.language = detected
-      i18n.translations = await import(`./locales/${detected}.json`)
+      i18n.translations = await import(`../locales/${detected}.json`)
         .then(module => module.default)
         .catch(() => ({}))
     }
@@ -37,10 +37,10 @@ const i18n: {
   },
 }
 
-const d = i18n.d
+const detect = i18n.detect
 const t = i18n.t
-export { d, i18n, t }
+export { detect, i18n, t }
 
 if (typeof window !== 'undefined') {
-  await d(location.href.slice(location.origin.length))
+  await detect(location.href.slice(location.origin.length))
 }

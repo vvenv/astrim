@@ -1,4 +1,4 @@
-import { t } from '@/i18n'
+import { t } from '@/services/i18n'
 import { ComboInput } from './form/ComboInput'
 
 export function EmailSubscribe() {

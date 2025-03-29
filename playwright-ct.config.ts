@@ -1,3 +1,4 @@
+import { resolve } from 'node:path'
 import { defineConfig, devices } from '@playwright/experimental-ct-react'
 import UnoCSS from 'unocss/vite'
 
@@ -28,18 +29,23 @@ export default defineConfig({
       plugins: [
         UnoCSS(),
       ],
+      resolve: {
+        alias: {
+          '@': resolve(new URL('.', import.meta.url).pathname, './src'),
+        },
+      },
     },
   },
   projects: [
     {
-      name: 'chromium',
+      name: 'Mobile Safari',
       use: {
-        ...devices['Desktop Chrome'],
+        ...devices['iPhone 13'],
         viewport: {
           width: 375,
           height: 667,
         },
-        // isMobile: true,
+        isMobile: true,
         colorScheme: 'dark',
       },
     },

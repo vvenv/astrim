@@ -1,5 +1,5 @@
 import type { CurrencyCode } from 'api.generated'
-import { currencySign } from '@/utils/currency'
+import { currencySign } from '@/services/currency'
 
 interface Props {
   amount: string

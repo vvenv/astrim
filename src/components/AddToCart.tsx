@@ -1,9 +1,9 @@
 import type { GetProductQuery } from 'api.generated'
-import { t } from '@/i18n'
+import { t } from '@/services/i18n'
 import { selectedOptions } from '@/store/selectedOptions'
 import { Field, Input } from '@base-ui-components/react'
 import { useStore } from '@nanostores/react'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 interface Props {
   variants: NonNullable<
@@ -14,7 +14,6 @@ interface Props {
 export function AddToCart({ variants }: Props) {
   const $selectedOptions = useStore(selectedOptions)
 
-  const [disabled, setDisabled] = useState(true)
   const [quantity, setQuantity] = useState(1)
 
   const selectedVariant = useMemo(() => {
@@ -25,9 +24,7 @@ export function AddToCart({ variants }: Props) {
     )
   }, [variants, $selectedOptions])
 
-  useEffect(() => {
-    setDisabled(!selectedVariant?.availableForSale)
-  }, [selectedVariant?.availableForSale])
+  const disabled = !selectedVariant?.availableForSale
 
   return (
     <section className="my-8 flex flex-col items-start gap-5">

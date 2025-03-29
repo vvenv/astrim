@@ -1,4 +1,4 @@
-import { i18n } from '@/i18n'
+import { i18n } from '@/services/i18n'
 import { HeaderDrawer } from './HeaderDrawer'
 import { HeaderLogo } from './HeaderLogo'
 import { HeaderMenu } from './HeaderMenu'

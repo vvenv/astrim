@@ -1,8 +1,4 @@
-import { defineMiddleware } from 'astro:middleware'
-import { d } from './i18n'
+import { i18n } from '@/middlewares/i18n'
+import { sequence } from 'astro:middleware'
 
-export const onRequest = defineMiddleware(async (ctx, next) => {
-  const url = await d(ctx.url.pathname)
-
-  return url ? ctx.redirect(url) : next()
-})
+export const onRequest = sequence(i18n)

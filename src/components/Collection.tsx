@@ -1,5 +1,5 @@
 import type { GetCollectionQuery } from 'api.generated'
-import { i18n, t } from '@/i18n'
+import { i18n, t } from '@/services/i18n'
 import { A11y, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ProductImage } from './ProductImage'
