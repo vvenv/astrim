@@ -2763,7 +2763,7 @@
     "@typescript-eslint/types" "8.27.0"
     "@typescript-eslint/typescript-estree" "8.27.0"
 
-"@typescript-eslint/utils@8.28.0", "@typescript-eslint/utils@^8.23.0", "@typescript-eslint/utils@^8.26.0", "@typescript-eslint/utils@^8.26.1", "@typescript-eslint/utils@^8.27.0", "@typescript-eslint/utils@^8.28.0":
+"@typescript-eslint/utils@8.28.0", "@typescript-eslint/utils@^8.23.0", "@typescript-eslint/utils@^8.26.0", "@typescript-eslint/utils@^8.27.0", "@typescript-eslint/utils@^8.28.0":
   version "8.28.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-8.28.0.tgz#7850856620a896b7ac621ac12d49c282aefbb528"
   integrity sha512-OELa9hbTYciYITqgurT1u/SzpQVtDLmQMFzy/N8pQE+tefOyCWT79jHsav294aTqV1q1u+VzqDGbuujvRYaeSQ==
@@ -2830,20 +2830,33 @@
     "@unocss/core" "66.1.0-beta.7"
     unconfig "^7.3.1"
 
-"@unocss/core@66.1.0-beta.7", "@unocss/core@^66.1.0-beta.7":
+"@unocss/config@66.1.0-beta.8":
+  version "66.1.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@unocss/config/-/config-66.1.0-beta.8.tgz#e5832704bdd8087ee803dd1a78169fae01098377"
+  integrity sha512-o4Lhbpvho/kqt0NmpniQ9siOElDDClqXVIMaaQxWdGR8C7SjDjl/KkaG4EAMEvpfmW7z6an4pgGLOtkCUUwVhw==
+  dependencies:
+    "@unocss/core" "66.1.0-beta.8"
+    unconfig "^7.3.1"
+
+"@unocss/core@66.1.0-beta.7":
   version "66.1.0-beta.7"
   resolved "https://registry.yarnpkg.com/@unocss/core/-/core-66.1.0-beta.7.tgz#e1559f98c982e96cc2747ae93b124342f64d01ef"
   integrity sha512-l1/r+Jd9TbsRqR/geEdIV/Erzvs26GitTtMVsGcJfuaK1/WWOLtbSHRUDQAB/UpcOOWvuNuAv4UWsXX9Z0DFmw==
 
-"@unocss/eslint-plugin@^66.1.0-beta.7":
-  version "66.1.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@unocss/eslint-plugin/-/eslint-plugin-66.1.0-beta.7.tgz#bddf1c621e085fb142a79851c4c8b782f30be8a4"
-  integrity sha512-5dT78YCVSqUXJSKR6C3ekuWMbT5y1nchyFmFRmrMcTYpyesIhQGjCbMilXR09p1fkD35ODPAcdBwhnuB7nQd6Q==
+"@unocss/core@66.1.0-beta.8", "@unocss/core@^66.1.0-beta.7", "@unocss/core@^66.1.0-beta.8":
+  version "66.1.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@unocss/core/-/core-66.1.0-beta.8.tgz#5ec78803e514d04450cfd27bbdcd6cdc52a6a141"
+  integrity sha512-j56/9COPQ09+g0EittHtAmddRU4X0HgQ+Fz5hK+I894boljGNG6kI1vj5Gi0C/tllddrH/CbTdJ1K6RumSAK8w==
+
+"@unocss/eslint-plugin@^66.1.0-beta.8":
+  version "66.1.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@unocss/eslint-plugin/-/eslint-plugin-66.1.0-beta.8.tgz#75c44522afda292bc4894be97161bf033b3bdfd6"
+  integrity sha512-oz7YGQnMQqRfuJNrktN5VmnoFfJHL5w0UcaVYxZ8BmCWN7iflExl9cCxrcbFu64/M9RXRyW78xKY4qvjqr5GcA==
   dependencies:
-    "@typescript-eslint/utils" "^8.26.1"
-    "@unocss/config" "66.1.0-beta.7"
-    "@unocss/core" "66.1.0-beta.7"
-    "@unocss/rule-utils" "66.1.0-beta.7"
+    "@typescript-eslint/utils" "^8.28.0"
+    "@unocss/config" "66.1.0-beta.8"
+    "@unocss/core" "66.1.0-beta.8"
+    "@unocss/rule-utils" "66.1.0-beta.8"
     magic-string "^0.30.17"
     synckit "^0.9.2"
 
@@ -2972,6 +2985,14 @@
   integrity sha512-oJ5lcHRgN1aabsszkBXoiYp0G6LLM011BJoAEfKOeRZ14FGFlg0zuOi/h7aKlVuIvBt6q8BWosJLlZSAQnNypg==
   dependencies:
     "@unocss/core" "^66.1.0-beta.7"
+    magic-string "^0.30.17"
+
+"@unocss/rule-utils@66.1.0-beta.8":
+  version "66.1.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@unocss/rule-utils/-/rule-utils-66.1.0-beta.8.tgz#788782a855b001be5374624d0eb7b4e8a039a7ab"
+  integrity sha512-NamsfYZKEiDFNyiHwlllz21nvDoI25oVCc4ihHUh0OkQohVgPshp8Amx3WNogDllQf3VqRC9l7pWO6kjLjRvIw==
+  dependencies:
+    "@unocss/core" "^66.1.0-beta.8"
     magic-string "^0.30.17"
 
 "@unocss/transformer-attributify-jsx@66.1.0-beta.7":
