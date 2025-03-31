@@ -62,7 +62,7 @@
     "postinstall-postinstall": "^2.1.0",
     "typescript": "^5.8.2",
     "unocss": "^66.1.0-beta.7",
-    "vite": "^6.2.3"
+    "vite": "^6.2.4"
   },
   "resolutions": {
     "vite": "^6.2.3"
