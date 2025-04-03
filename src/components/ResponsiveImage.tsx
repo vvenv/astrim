@@ -1,11 +1,12 @@
 interface Props {
+  className?: string
   src: string
   alt: string
 }
 
 const sizes = [165, 360, 533, 720, 940, 1066]
 
-export function ProductImage({ src, alt }: Props) {
+export function ResponsiveImage({ src, alt, ...props }: Props) {
   const resizes = sizes
     .map((size) => {
       return `${src}&width=${size} ${size}w`
@@ -21,6 +22,7 @@ export function ProductImage({ src, alt }: Props) {
       loading="lazy"
       width="4096"
       height="4096"
+      {...props}
     />
   )
 }

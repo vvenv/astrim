@@ -1,4 +1,4 @@
-import { t } from '@/services/i18n'
+import { i18n, t } from '@/services/i18n'
 import { Popover } from '@base-ui-components/react'
 
 interface Props {
@@ -19,7 +19,7 @@ export function CollectionMenu({ title, links }: Props) {
             <ul className="flex flex-col" tabIndex={-1}>
               {links.map(({ link, text }) => (
                 <li key={link}>
-                  <a className="block px-4 py-3 hover:bg-invert/4" href={link}>
+                  <a className="block px-4 py-3 hover:bg-invert/4" href={`/${i18n.language}${link}`}>
                     {t(text)}
                   </a>
                 </li>

@@ -1,5 +1,5 @@
 import type { GetProductQuery } from 'api.generated'
-import { ProductImage } from '@/components/ProductImage'
+import { ResponsiveImage } from '@/components/ResponsiveImage'
 import { selectedOptions } from '@/store/selectedOptions'
 import { useStore } from '@nanostores/react'
 import { useMemo } from 'react'
@@ -25,7 +25,7 @@ export function MediaGallery({ featuredImage, variants }: Props) {
   }, [variants, $selectedOptions])
 
   return (
-    <ProductImage
+    <ResponsiveImage
       src={
         (selectedVariant?.image?.url as string)
         ?? (featuredImage?.url as string)

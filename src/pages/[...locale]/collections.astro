@@ -1,0 +1,34 @@
+---
+import type { GetCollectionsQuery } from 'api.generated'
+import { ResponsiveImage } from '@/components/ResponsiveImage'
+import getCollections from '@/graphql/collections.gql'
+import Layout from '@/layouts/Default.astro'
+import { i18n } from '@/services/i18n'
+import { request } from 'graphql-request'
+
+export const prerender = false
+
+const {
+  collections: { nodes: collections },
+} = await request<GetCollectionsQuery>('https://mock.shop/api', getCollections, {
+  first: 10,
+  productFirst: 0,
+});
+---
+
+<Layout>
+  <section class="flex flex-col gap-12">
+    <h1 class="text-3xl font-semibold">Collections</h1>
+    <ul class="grid grid-cols-1 gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:gap-8 sm:gap-6">
+    {
+      collections.map(({ handle, title, image }) => (
+        <li>
+          <a class="w-full" href={`/${i18n.language}/collections/${handle}`} title={title}>
+            <ResponsiveImage className="w-full" src={image!.url as string} alt={title} />
+          </a>
+        </li>
+      ))
+    }
+    </ul>
+  </section>
+</Layout>

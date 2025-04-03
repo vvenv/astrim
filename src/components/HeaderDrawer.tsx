@@ -1,6 +1,5 @@
-import { COLLECTIONS } from '@/consts'
+import { i18n } from '@/services/i18n'
 import { Dialog } from '@base-ui-components/react'
-import { CollectionDisclosure } from './CollectionDisclosure'
 import { Localization } from './Localization'
 import { LoginEntry } from './LoginEntry'
 import { SocialMedia } from './SocialMedia'
@@ -34,22 +33,36 @@ export function HeaderDrawer() {
             <div className="min-h-0 flex flex-1 flex-col">
               <nav className="min-h-0 flex-1 overflow-y-auto">
                 <ul>
-                  {
-                    COLLECTIONS.map(({ title, links }) => (
-                      <li key={title}>
-                        <CollectionDisclosure
-                          title={title}
-                          links={links}
-                        />
-                      </li>
-                    ))
-                  }
                   <li>
                     <a
                       className="block px-8 py-3 hover:bg-invert/4"
-                      href="/pages/swiper"
+                      href={`/${i18n.language}/collections/men`}
                     >
-                      Swiper
+                      Men
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="block px-8 py-3 hover:bg-invert/4"
+                      href={`/${i18n.language}/collections/women`}
+                    >
+                      Women
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="block px-8 py-3 hover:bg-invert/4"
+                      href={`/${i18n.language}/collections/unisex`}
+                    >
+                      Unisex
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="block px-8 py-3 hover:bg-invert/4"
+                      href={`/${i18n.language}/collections`}
+                    >
+                      Collections
                     </a>
                   </li>
                 </ul>

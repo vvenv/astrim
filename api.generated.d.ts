@@ -5245,8 +5245,8 @@ export type MutationShopPayPaymentRequestSessionSubmitArgs = {
 /**
  * An object with an ID field to support global identification, in accordance with the
  * [Relay specification](https://relay.dev/graphql/objectidentification.htm#sec-Node-Interface).
- * This interface is used by the [node](https://shopify.dev/api/admin-graphql/unstable/queries/node)
- * and [nodes](https://shopify.dev/api/admin-graphql/unstable/queries/nodes) queries.
+ * This interface is used by the [node](/docs/api/storefront/latest/queries/node)
+ * and [nodes](/docs/api/storefront/latest/queries/nodes) queries.
  *
  */
 export type Node = {
@@ -8620,12 +8620,13 @@ export type GetCollectionQuery = { collection?: Maybe<(
 
 export type GetCollectionsQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']['input']>;
+  productsFirst?: InputMaybe<Scalars['Int']['input']>;
 }>;
 
 
 export type GetCollectionsQuery = { collections: { nodes: Array<(
-      Pick<Collection, 'handle' | 'title'>
-      & { products: { nodes: Array<(
+      Pick<Collection, 'handle' | 'title' | 'description'>
+      & { image?: Maybe<Pick<Image, 'id' | 'url'>>, products: { nodes: Array<(
           Pick<Product, 'handle' | 'title'>
           & { featuredImage?: Maybe<Pick<Image, 'id' | 'url'>>, variants: { nodes: Array<{ price: Pick<MoneyV2, 'amount' | 'currencyCode'> }> } }
         )> } }
@@ -8660,7 +8661,7 @@ export type GetProductsQuery = { products: { nodes: Array<(
 interface GeneratedQueryTypes {
   "query getCollectionBefore($handle: String!, $last: Int = 6, $before: String = \"\") {\n  collection(handle: $handle) {\n    title\n    description\n    products(last: $last, before: $before) {\n      nodes {\n        handle\n        title\n        featuredImage {\n          id\n          url\n        }\n        variants(first: 1) {\n          nodes {\n            price {\n              amount\n              currencyCode\n            }\n          }\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        hasNextPage\n        startCursor\n        endCursor\n      }\n    }\n  }\n}": {return: GetCollectionBeforeQuery, variables: GetCollectionBeforeQueryVariables},
   "query getCollection($handle: String!, $first: Int = 6, $after: String = \"\") {\n  collection(handle: $handle) {\n    title\n    description\n    products(first: $first, after: $after) {\n      nodes {\n        handle\n        title\n        featuredImage {\n          id\n          url\n        }\n        variants(first: 1) {\n          nodes {\n            price {\n              amount\n              currencyCode\n            }\n          }\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        hasNextPage\n        startCursor\n        endCursor\n      }\n    }\n  }\n}": {return: GetCollectionQuery, variables: GetCollectionQueryVariables},
-  "query getCollections($first: Int = 6) {\n  collections(first: $first) {\n    nodes {\n      handle\n      title\n      products(first: 4) {\n        nodes {\n          handle\n          title\n          featuredImage {\n            id\n            url\n          }\n          variants(first: 1) {\n            nodes {\n              price {\n                amount\n                currencyCode\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}": {return: GetCollectionsQuery, variables: GetCollectionsQueryVariables},
+  "query getCollections($first: Int = 6, $productsFirst: Int = 4) {\n  collections(first: $first) {\n    nodes {\n      handle\n      title\n      description\n      image {\n        id\n        url\n      }\n      products(first: $productsFirst) {\n        nodes {\n          handle\n          title\n          featuredImage {\n            id\n            url\n          }\n          variants(first: 1) {\n            nodes {\n              price {\n                amount\n                currencyCode\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}": {return: GetCollectionsQuery, variables: GetCollectionsQueryVariables},
   "query getProduct($handle: String!) {\n  product(handle: $handle) {\n    id\n    title\n    description\n    featuredImage {\n      id\n      url\n    }\n    selectedOrFirstAvailableVariant {\n      selectedOptions {\n        name\n        value\n      }\n    }\n    options {\n      name\n      optionValues {\n        id\n        name\n      }\n    }\n    variants(first: 100) {\n      nodes {\n        id\n        availableForSale\n        quantityAvailable\n        image {\n          id\n          url\n        }\n        price {\n          amount\n          currencyCode\n        }\n        selectedOptions {\n          name\n          value\n        }\n      }\n    }\n  }\n}": {return: GetProductQuery, variables: GetProductQueryVariables},
   "query getProducts($first: Int = 4) {\n  products(first: $first) {\n    nodes {\n      handle\n      title\n      featuredImage {\n        id\n        url\n      }\n      variants(first: 1) {\n        nodes {\n          price {\n            amount\n            currencyCode\n          }\n        }\n      }\n    }\n  }\n}": {return: GetProductsQuery, variables: GetProductsQueryVariables},
 }

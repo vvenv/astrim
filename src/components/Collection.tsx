@@ -2,8 +2,8 @@ import type { GetCollectionQuery } from 'api.generated'
 import { i18n, t } from '@/services/i18n'
 import { A11y, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { ProductImage } from './ProductImage'
 import { ProductPrice } from './ProductPrice'
+import { ResponsiveImage } from './ResponsiveImage'
 
 import 'swiper/css'
 
@@ -63,7 +63,7 @@ export function Collection({ handle, title, products }: Props) {
                 className="group/slide relative"
                 href={`/${i18n.language}/products/${handle}`}
               >
-                <ProductImage src={featuredImage!.url as string} alt={title} />
+                <ResponsiveImage src={featuredImage!.url as string} alt={title} />
                 <div className="absolute bottom-0 left-0 right-0 translate-y-full bg-default/60 p-2 opacity-0 transition-all group-hover/slide:translate-y-0 group-hover/slide:opacity-100">
                   <h3
                     className="text-xl group-hover/slide:underline"

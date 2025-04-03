@@ -1,9 +1,14 @@
-query getCollections($first: Int = 6) {
+query getCollections($first: Int = 6, $productsFirst: Int = 4) {
   collections(first: $first) {
     nodes {
       handle
       title
-      products(first: 4) {
+      description
+      image {
+        id
+        url
+      }
+      products(first: $productsFirst) {
         nodes {
           handle
           title
