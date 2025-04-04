@@ -14,7 +14,7 @@ test('should render textbox and label', async ({ mount }) => {
 
   await expect(label).toHaveCSS(
     'top',
-    '12px',
+    '6px',
   )
   await input.click()
   await expect(label).toHaveCSS(
