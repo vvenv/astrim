@@ -7,9 +7,7 @@ import { SocialMedia } from './SocialMedia'
 export function HeaderDrawer() {
   return (
     <div className="md:hidden" id="header-drawer">
-      <Dialog.Root
-        data-testid="header-drawer-content"
-      >
+      <Dialog.Root>
         <Dialog.Trigger
           className="flex p-3 text-default"
           type="button"
@@ -30,7 +28,10 @@ export function HeaderDrawer() {
             >
               <i className="i-astrim-close block size-5 cursor-pointer transition-transform hover:scale-110"></i>
             </Dialog.Close>
-            <div className="min-h-0 flex flex-1 flex-col">
+            <div
+              className="min-h-0 flex flex-1 flex-col"
+              data-testid="header-drawer-content"
+            >
               <nav className="min-h-0 flex-1 overflow-y-auto">
                 <ul>
                   <li>
