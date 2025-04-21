@@ -41,7 +41,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
     "@babel/core": "^7.26.10",
-    "@eslint-react/eslint-plugin": "^1.40.3",
+    "@eslint-react/eslint-plugin": "^1.48.4",
     "@graphql-codegen/cli": "5.0.5",
     "@playwright/experimental-ct-react": "^1.51.1",
     "@playwright/test": "^1.51.1",
