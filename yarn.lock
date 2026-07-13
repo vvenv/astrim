@@ -3195,10 +3195,10 @@
   resolved "https://registry.yarnpkg.com/@unocss/reset/-/reset-66.5.0.tgz#18e5ae9f3df66d1c5a5a8a8fad3dc7e3636d06cd"
   integrity sha512-Sf27NbbNUg3e4BShQB7EsMCS1GtA6IORBm08SitSpUZZYOZAj+LAypYsOJ4rttAFs/Hp1h0AxtNShesXWK66oA==
 
-"@unocss/reset@^66.1.0-beta.10":
-  version "66.1.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@unocss/reset/-/reset-66.1.0-beta.10.tgz#5f4a54debd5e7d2d624aaf45fde4b7685c84fff5"
-  integrity sha512-B3Xd1jjtzsifpeoFWrtKO+7yjdx0S/lHaaDtAoPxHe8RmQBbjFSWpVV7ohRCEzuZwG0gLJHh5lV+lP70CyFJaw==
+"@unocss/reset@^66.7.5":
+  version "66.7.5"
+  resolved "https://registry.yarnpkg.com/@unocss/reset/-/reset-66.7.5.tgz#bccf9919e2c6d9d7be8e417545cb3e928b5c9cc7"
+  integrity sha512-z3wbt2cuQPjtT6w5xzRYZYFIIlUPzhVKz8yIcE9fvu7BgR3hO7uVsg/5mzDoGwQ96Ya3Sk68rpmI/gLYl4bJag==
 
 "@unocss/rule-utils@66.1.0-beta.10":
   version "66.1.0-beta.10"
